@@ -1,0 +1,253 @@
+﻿"plot_id","plot_name","plot_type","plot_permanence","stratum","planting_pattern","planting_indicator","anr_indicator","site_id","resampling_30x30","resampling_3x3","large_trees_present","little_trees_present"
+"100000","RPA-274-Medina de Rioseco 1","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","yes","yes"
+"100001","RPA-274-Medina de Rioseco 10","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100002","RPA-274-Medina de Rioseco 11","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100003","RPA-274-Medina de Rioseco 11C","control",NA,NA,NA,NA,NA,"274",NA,NA,NA,NA
+"100004","RPA-274-Medina de Rioseco 12","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100005","RPA-274-Medina de Rioseco 13","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100006","RPA-274-Medina de Rioseco 14","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100007","RPA-274-Medina de Rioseco 15","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100008","RPA-274-Medina de Rioseco 16","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100009","RPA-274-Medina de Rioseco 17","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100010","RPA-274-Medina de Rioseco 18","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100011","RPA-274-Medina de Rioseco 19","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100012","RPA-274-Medina de Rioseco 2","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100013","RPA-274-Medina de Rioseco 20","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100014","RPA-274-Medina de Rioseco 21","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100015","RPA-274-Medina de Rioseco 22","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100016","RPA-274-Medina de Rioseco 23","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100017","RPA-274-Medina de Rioseco 24","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100018","RPA-274-Medina de Rioseco 25","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100019","RPA-274-Medina de Rioseco 3","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100020","RPA-274-Medina de Rioseco 4","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100021","RPA-274-Medina de Rioseco 5","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100022","RPA-274-Medina de Rioseco 6","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100023","RPA-274-Medina de Rioseco 7","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100024","RPA-274-Medina de Rioseco 8","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100025","RPA-274-Medina de Rioseco 9","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100026","RPA-275-Molezuelas_1","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","275","2.0","2.0","no","no"
+"100027","RPA-275-Molezuelas_2","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","275","2.0","2.0","no","no"
+"100028","RPA-275-Molezuelas_3","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","275","2.0","2.0","yes","yes"
+"100029","RPA-275-Molezuelas_4","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","275","2.0","2.0","no","yes"
+"100030","RPA-275-Molezuelas_5","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","275","2.0","2.0","no","no"
+"100031","RPA-275-Molezuelas_6","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","275","2.0","2.0","no","yes"
+"100032","RPA-275-Molezuelas_7","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","275","2.0","2.0","yes","yes"
+"100033","RPA-275-Molezuelas_8","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","275","0.0","2.0","yes","yes"
+"100034","RPA-302-Revilla del Campo 1","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","302","2.0","2.0","no","yes"
+"100035","RPA-302-Revilla del Campo 2","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","302","2.0","2.0","no","no"
+"100036","RPA-302-Revilla del Campo 3","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","302","2.0","2.0","no","yes"
+"100037","RPA-302-Revilla del Campo 4","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","302","2.0","2.0","no","no"
+"100038","RPA-302-Revilla del Campo 5","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","302","2.0","2.0","no","no"
+"100039","RPA-302-Revilla del Campo 6","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","302","2.0","0.0","no","yes"
+"100040","RPA-306-Torrelara 1.1","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","306","2.0","2.0","yes","no"
+"100041","RPA-306-Torrelara 1.2","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","306","0.0","0.0","no","no"
+"100042","RPA-306-Torrelara 1.3","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","306","2.0","0.0","no","yes"
+"100043","RPA-306-Torrelara 1.4","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","306","2.0","2.0","no","yes"
+"100044","RPA-306-Torrelara 1.5","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","306","0.0","0.0","yes","yes"
+"100045","RPA-306-Torrelara 1.6","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","306","2.0","2.0","no","no"
+"100046","RPA-307-Torrelara 2.1","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","307","2.0","2.0","no","yes"
+"100047","RPA-307-Torrelara 2.2","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","307","2.0","0.0","no","no"
+"100048","RPA-307-Torrelara 2.3","restoration","permanent",NA,"trees were planted with a 3m by 2m spacing","yes","no","307","2.0","0.0","no","no"
+"100049","CIC-2076-01_P001","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","2.0",NA,"no"
+"100050","CIC-2076-01_P004","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100051","CIC-2076-01_P006","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100052","CIC-2076-01_P008","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","2.0",NA,"no"
+"100053","CIC-2076-01_P009","restoration","permanent","plantio em área total","3x3","yes","yes","2076","2.0","0.0","no",NA
+"100054","CIC-2076-01_P010","restoration","permanent","plantio em área total","3x3","yes","yes","2076","2.0","0.0","no",NA
+"100055","CIC-2076-02_P001","restoration","permanent","regeneração natural com manejo",NA,"no","yes","2076","0.0","0.0",NA,NA
+"100056","CIC-2076-02_P002","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100057","CIC-2076-02_P003","restoration","permanent","regeneração natural com manejo",NA,"no","yes","2076","0.0","0.0",NA,NA
+"100058","CIC-2076-02_P004","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100059","CIC-2076-02_P005","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100060","CIC-2076-04_P002","restoration","permanent","plantio em área total","3x2","yes","yes","2076","0.0","0.0",NA,NA
+"100061","CIC-2076-04_P003","restoration","permanent","plantio em área total","3x2","yes","yes","2076","0.0","0.0",NA,NA
+"100062","CIC-2076-04_P004","restoration","permanent","plantio em área total","3x2","yes","yes","2076","0.0","0.0",NA,NA
+"100063","CIC-2076-05_P002","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100064","CIC-2076-07_P001","restoration","permanent","plantio em área total","3x2","yes","yes","2076","0.0","0.0",NA,NA
+"100065","CIC-2076-07_P003","restoration","permanent","plantio em área total","3x2","yes","yes","2076","0.0","0.0",NA,NA
+"100066","CIC-2076-07_P004","restoration","permanent","plantio em área total","3x2","yes","yes","2076","0.0","0.0",NA,NA
+"100067","CIC-2076-08_P003","restoration","permanent","regeneração natural com manejo",NA,"no","yes","2076","0.0","0.0",NA,NA
+"100068","CIC-2076-09_P001","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100069","CIC-2076-09_P002","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100070","CIC-2076-09_P003","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100071","CIC-2076-09_P004","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100072","CIC-2076-09_P005","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100073","CIC-2076-09_P006","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100074","CIC-2076-09_P008","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100075","CIC-2076-10_P002","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100076","CIC-2076-10_P004","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100077","CIC-2076-11_P001","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100078","CIC-2076-11_P002","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100079","CIC-2076-11_P004","restoration","permanent","plantio em área total","3x3","yes","yes","2076","2.0","0.0","no",NA
+"100080","CIC-2076-11_P005","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100081","CIC-2076-14_P005","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100082","CIC-2076-14_P006","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100083","CIC-2076-14_P007","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100084","CIC-2076-14_P008","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100085","CIC-2076-14_P009","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100086","CIC-2076-15_P001","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100087","CIC-2076-15_P002","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100088","CIC-2076-16_P001","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100089","CIC-2076-16_P002","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100090","CIC-2076-16_P003","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100091","CIC-2076-16_P004","restoration","permanent","plantio em área total","3x3","yes","yes","2076","2.0","0.0","no",NA
+"100092","CIC-2076-16_P005","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100093","CIC-2076-16_P006","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100094","CIC-2076-16_P007","restoration","permanent","plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100095","CIC-2076-16_P008","restoration","permanent","plantio em área total","3x2","yes","yes","2076","0.0","0.0",NA,NA
+"100096","CIC-2076-18_P001","restoration","permanent","regeneração natural com manejo",NA,"no","yes","2076","0.0","0.0",NA,NA
+"100097","CIC-2076-18_P003","restoration","permanent","regeneração natural com manejo",NA,"no","yes","2076","0.0","0.0",NA,NA
+"100098","MDP-2049-01_P004","restoration","permanent","plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100099","MDP-2049-01_P010","restoration","permanent","plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100100","MDP-2049-01_P014","restoration","permanent","plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100101","MDP-2049-01_P024","restoration","permanent","plantio em área total","3x2","yes","yes","2049","0.0","0.0",NA,NA
+"100102","MDP-2049-02_P001","restoration","permanent","plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100103","MDP-2049-02_P002","restoration","permanent","plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100104","MDP-2049-02_P009","restoration","permanent","plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100105","MDP-2049-02_P016","restoration","permanent","plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100106","MDP-2049-02_P025","restoration","permanent","plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100107","MDP-2049-02_P026","restoration","permanent","plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100108","MDP-2049-02_P027","restoration","permanent","plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100109","MDP-2049-02_P028","restoration","permanent","plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100110","MDP-2049-02_P029","restoration","permanent","plantio em área total","3x3","yes","yes","2049","2.0","0.0","no",NA
+"100111","MDP-2049-03_P003","restoration","permanent","plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100112","MDP-2049-04_P006","restoration","permanent","plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100113","MDP-2049-06_P015","restoration","permanent","regeneração natural com manejo - adensamento","3x2","yes","yes","2049","0.0","0.0",NA,NA
+"100114","MDP-2049-06_P018","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100115","MDP-2049-07_P011","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100116","MDP-2049-07_P013","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100117","MDP-2049-07_P019","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100118","MDP-2049-07_P023","restoration","permanent","regeneração natural com manejo","3x2","yes","yes","2049","0.0","0.0",NA,NA
+"100119","MDP-2050-02_P008","restoration","permanent","plantio em área total","3x3","yes","yes","2050","2.0","0.0","no",NA
+"100120","MDP-2050-02_P017","restoration","permanent","plantio em área total","3x2","yes","yes","2050","0.0","0.0",NA,NA
+"100121","MDP-2050-03_P004","restoration","permanent","plantio em área total","3x2","yes","yes","2050","0.0","0.0",NA,NA
+"100122","MDP-2050-03_P006","restoration","permanent","plantio em área total","3x2","yes","yes","2050","0.0","0.0",NA,NA
+"100123","MDP-2050-03_P014","restoration","permanent","plantio em área total","3x2","yes","yes","2050","0.0","0.0",NA,NA
+"100124","MDP-2050-04_P012","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2050","0.0","0.0",NA,NA
+"100125","MDP-2050-04_P016","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2050","0.0","0.0",NA,NA
+"100126","MDP-2050-05_P010","restoration","permanent","regeneração natural com manejo",NA,"no","yes","2050","0.0","0.0",NA,NA
+"100127","MDP-2050-06_P005","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2050","0.0","0.0",NA,NA
+"100128","MDP-2050-07_P009","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2050","0.0","0.0",NA,NA
+"100129","MDP-2051-01_P001","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2051","0.0","0.0",NA,NA
+"100130","MDP-2051-01_P002","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2051","0.0","0.0",NA,NA
+"100131","MDP-2051-02_P001","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2051","0.0","0.0",NA,NA
+"100132","MDP-2051-02_P002","restoration","permanent","regeneração natural com manejo","3x2","yes","yes","2051","0.0","0.0",NA,NA
+"100133","MDP-2052-01_P002","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2052","0.0","0.0",NA,NA
+"100134","MDP-2052-01_P003","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2052","0.0","0.0",NA,NA
+"100135","MDP-2052-01_P004","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2052","0.0","0.0",NA,NA
+"100136","MDP-2052-01_P006","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2052","0.0","0.0",NA,NA
+"100137","MDP-2053-01_P003","restoration","permanent","plantio em área total","3x3","yes","yes","2053","0.0","0.0",NA,NA
+"100138","MDP-2053-02_P008","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2053","0.0","0.0",NA,NA
+"100139","MDP-2053-02_P013","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2053","0.0","0.0",NA,NA
+"100140","MDP-2053-03_P002","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2053","0.0","0.0",NA,NA
+"100141","MDP-2053-03_P007","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2053","0.0","0.0",NA,NA
+"100142","MDP-2053-03_P010","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2053","0.0","0.0",NA,NA
+"100143","MDP-2053-04_P014","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2053","0.0","0.0",NA,NA
+"100144","MDP-2053-05_P001","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2053","0.0","0.0",NA,NA
+"100145","MDP-2053-05_P006","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2053","0.0","0.0",NA,NA
+"100146","MDP-2054-01_P002","restoration","permanent","regeneração natural com manejo - adensamento","3x2","yes","yes","2054","0.0","0.0",NA,NA
+"100147","MDP-2054-01_P005","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2054","0.0","0.0",NA,NA
+"100148","MDP-2054-01_P006","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2054","0.0","0.0",NA,NA
+"100149","MDP-2054-01_P008","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2054","0.0","0.0",NA,NA
+"100150","MDP-2055-01_P004","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2055","0.0","0.0",NA,NA
+"100151","MDP-2055-01_P006","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2055","0.0","0.0",NA,NA
+"100152","MDP-2055-03_P001","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2055","0.0","0.0",NA,NA
+"100153","MDP-2055-03_P003","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2055","0.0","0.0",NA,NA
+"100154","MDP-2055-03_P005","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2055","0.0","0.0",NA,NA
+"100155","MDP-2055-03_P007","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2055","0.0","0.0",NA,NA
+"100156","MDP-2055-03_P008","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2055","0.0","0.0",NA,NA
+"100157","MDP-2056-01_P001","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2056","0.0","0.0",NA,NA
+"100158","MDP-2056-01_P006","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2056","0.0","0.0",NA,NA
+"100159","MDP-2056-02_P002","restoration","permanent","regeneração natural com manejo",NA,"no","yes","2056","0.0","0.0",NA,NA
+"100160","MDP-2056-03_P005","restoration","permanent","regeneração natural com manejo",NA,"no","yes","2056","0.0","0.0",NA,NA
+"100161","MDP-2056-03_P009","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2056","0.0","0.0",NA,NA
+"100162","MDP-2056-04_P003","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2056","0.0","0.0",NA,NA
+"100163","MDP-2056-04_P007","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2056","0.0","0.0",NA,NA
+"100164","MDP-2056-05_P004","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2056","0.0","0.0",NA,NA
+"100165","MDP-2056-05_P008","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2056","0.0","0.0",NA,NA
+"100166","MDP-2057-01_P002","restoration","permanent","plantio em área total","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100167","MDP-2057-03_P001","restoration","permanent","plantio em área total","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100168","MDP-2057-04_P001","restoration","permanent","plantio em área total","3x2","yes","yes","2057","0.0","0.0",NA,NA
+"100169","MDP-2057-05_P001","restoration","permanent","plantio em área total","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100170","MDP-2057-06_P002","restoration","permanent","plantio em área total","3x2","yes","yes","2057","0.0","0.0",NA,NA
+"100171","MDP-2057-06_P003","restoration","permanent","plantio em área total","3x2","yes","yes","2057","0.0","0.0",NA,NA
+"100172","MDP-2057-07_P001","restoration","permanent","plantio em área total","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100173","MDP-2057-08_P004","restoration","permanent","plantio em área total","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100174","MDP-2057-09_P001","restoration","permanent","plantio em área total","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100175","MDP-2057-10_P002","restoration","permanent","plantio em área total","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100176","MDP-2057-16_P002","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100177","MDP-2057-16_P004","restoration","permanent","regeneração natural com manejo - adensamento","3x2","yes","yes","2057","0.0","0.0",NA,NA
+"100178","MDP-2057-16_P005","restoration","permanent","regeneração natural com manejo - adensamento","3x2","yes","yes","2057","0.0","0.0",NA,NA
+"100179","MDP-2057-17_P001","restoration","permanent","regeneração natural com manejo","3x2","yes","yes","2057","0.0","0.0",NA,NA
+"100180","MDP-2057-18_P004","restoration","permanent","regeneração natural com manejo - adensamento","3x2","yes","yes","2057","0.0","0.0",NA,NA
+"100181","MDP-2057-18_P005","restoration","permanent","regeneração natural com manejo - adensamento","3x2","yes","yes","2057","0.0","0.0",NA,NA
+"100182","MDP-2057-19_P001","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100183","MDP-2057-20_P004","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100184","MDP-2057-20_P005","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100185","MDP-2057-21_P001","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100186","MDP-2057-22","restoration","permanent","plantio em área total","2.5 x 2.5","yes","yes","2057","2.0","0.0","no",NA
+"100187","MDP-2057-22_P001","restoration","permanent","regeneração natural com manejo - adensamento","3x2","yes","yes","2057","0.0","0.0",NA,NA
+"100188","MDP-2057-24_P004","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100189","MDP-2057-24_P005","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100190","MDP-2057-26_P001","restoration","permanent","regeneração natural com manejo",NA,"no","yes","2057","0.0","0.0",NA,NA
+"100191","MDP-2057-9101","restoration","permanent","plantio em área total","plantio direto espaçamento 2x2","yes","yes","2057","2.0","0.0","no",NA
+"100192","MDP-2057-IdRest17","restoration","permanent","plantio em área total","2.5 x 2.5","yes","yes","2057","2.0","0.0","no",NA
+"100193","MDP-2058-01_P001","restoration","permanent","regeneração natural com manejo",NA,"no","yes","2058","0.0","0.0",NA,NA
+"100194","MDP-2058-01_P003","restoration","permanent","regeneração natural com manejo",NA,"no","yes","2058","0.0","0.0",NA,NA
+"100195","MDP-2059-01_P004","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2059","0.0","0.0",NA,NA
+"100196","MDP-2059-03_P003","restoration","permanent","regeneração natural com manejo",NA,"no","yes","2059","0.0","0.0",NA,NA
+"100197","MDP-2061-01_P005","restoration","permanent","regeneração natural com manejo",NA,"no","yes","2061","0.0","0.0",NA,NA
+"100198","MDP-2061-01_P007","restoration","permanent","plantio em área total","3x3","yes","yes","2061","0.0","0.0",NA,NA
+"100199","MDP-2061-01_P009","restoration","permanent","plantio em área total","3x3","yes","yes","2061","0.0","0.0",NA,NA
+"100200","MDP-2061-01_P011","restoration","permanent","regeneração natural com manejo",NA,"no","yes","2061","0.0","0.0",NA,NA
+"100201","MDP-2061-01_P013","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2061","0.0","0.0",NA,NA
+"100202","MDP-2061-01_P014","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2061","0.0","0.0",NA,NA
+"100203","MDP-2061-02_P001","restoration","permanent","regeneração natural com manejo - adensamento","3x2","yes","yes","2061","0.0","0.0",NA,NA
+"100204","MDP-2061-04_P002","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2061","0.0","0.0",NA,NA
+"100205","MDP-2061-04_P004","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2061","0.0","0.0",NA,NA
+"100206","MDP-2061-04_P006","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2061","0.0","0.0",NA,NA
+"100207","MDP-2061-04_P008","restoration","permanent","regeneração natural com manejo","3x3","yes","yes","2061","0.0","0.0",NA,NA
+"100208","MDP-2061-04_P010","restoration","permanent","regeneração natural com manejo","3x2","yes","yes","2061","0.0","0.0",NA,NA
+"100209","MDP-2061-04_P012","restoration","permanent","regeneração natural com manejo",NA,"no","yes","2061","0.0","0.0",NA,NA
+"100210","MDP-2073-01_P003","restoration","permanent","regeneração natural com manejo - adensamento",NA,"no","yes","2073","0.0","0.0",NA,NA
+"100211","MDP-2073-01_P004","restoration","permanent","regeneração natural com manejo - adensamento",NA,"no","yes","2073","0.0","0.0",NA,NA
+"100212","MDP-2073-01_P005","restoration","permanent","regeneração natural com manejo - adensamento",NA,"no","yes","2073","0.0","0.0",NA,NA
+"100213","MDP-2074-01_P001","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2074","0.0","0.0",NA,NA
+"100214","MDP-2075-01_P001","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2075","0.0","0.0",NA,NA
+"100215","MDP-2075-01_P003","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2075","0.0","0.0",NA,NA
+"100216","MDP-2075-01_P004","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2075","0.0","0.0",NA,NA
+"100217","MDP-2075-01_P006","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2075","0.0","0.0",NA,NA
+"100218","MDP-2075-01_P009","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2075","0.0","0.0",NA,NA
+"100219","MDP-2075-01_P013","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2075","0.0","0.0",NA,NA
+"100220","MDP-2075-01_P014","restoration","permanent","regeneração natural com manejo - adensamento","3x3","yes","yes","2075","0.0","0.0",NA,NA
+"100221","MDP-3427-01","restoration","permanent","regeneração natural com manejo","3 x 3","yes","yes","3427","2.0","1.0","yes",NA
+"100222","MDP-3427-02","restoration","permanent","regeneração natural com manejo","3 x 3","yes","yes","3427","2.0","2.0","yes","yes"
+"100223","MDP-3427-03","restoration","permanent","regeneração natural com manejo","3 x 3","yes","yes","3427","2.0","1.0","yes",NA
+"100224","MDP-3428-01","restoration","permanent","regeneração natural com manejo","3 x 3","yes","yes","3428","2.0","2.0","yes","yes"
+"100225","MDP-3428-03","restoration","permanent","regeneração natural com manejo","3 x 3","yes","yes","3428","2.0","2.0","yes","yes"
+"100226","MDP-3428-04","restoration","permanent","regeneração natural com manejo","3 x 3","yes","yes","3428","2.0","2.0","yes","yes"
+"100227","MDP-3428-05","restoration","permanent","regeneração natural com manejo","3 x 3","yes","yes","3428","2.0","2.0","yes","yes"
+"100228","MDP-3429-01","restoration","permanent","regeneração natural com manejo","3 x 3","yes","yes","3429","2.0","1.0","no",NA
+"100229","MDP-3430-01","restoration","permanent","regeneração natural com manejo","3 x 3","yes","yes","3430","2.0","2.0","yes","yes"
+"100230","MDP-3430-07","restoration","permanent","plantio total","3 x 3","yes","yes","3430","2.0","1.0","yes",NA
+"100231","MDP-3432-02_01","restoration","permanent","plantio total em área de pastagem degradada","3 x 3","yes","yes","3432","1.0","0.0",NA,NA
+"100232","MDP-3432-03_01","restoration","permanent","plantio total em área de pastagem degradada","3 x 3","yes","yes","3432","1.0","0.0",NA,NA
+"100233","MDP-3432-03_02","restoration","permanent","plantio total em área de pastagem degradada","3 x 3","yes","yes","3432","0.0","0.0",NA,NA
+"100234","MDP-3433-03_02","restoration","permanent","plantio total","3 x 3","yes","yes","3433","0.0","0.0",NA,NA
+"100235","MDP-3433-04_01","restoration","permanent","plantio total","3 x 3","yes","yes","3433","0.0","0.0",NA,NA
+"100236","MDP-3433-04_02","restoration","permanent",NA,"3x3","yes","yes","3433","1.0","1.0",NA,NA
+"100237","MDP-3435-01","restoration","permanent","regeneração natural com manejo","3 x 3","yes","yes","3435","2.0","2.0","yes","yes"
+"100238","MDP-3435-05","restoration","permanent","regeneração natural com manejo","3 x 3","yes","yes","3435","2.0","1.0","yes",NA
+"100239","MDP-3438-02","restoration","permanent","regeneração natural com manejo","3 x 3","yes","yes","3438","2.0","2.0","yes","yes"
+"100240","PHI-1742-027","restoration","permanent","open uncultivated","portion were planted with 3m by 2m spacing","yes","yes","1742","0.0","1.0",NA,NA
+"100241","PHI-1742-034","restoration","permanent","early secondary forest","trees were planted with a 3m by 2m spacing","yes","yes","1742","0.0","1.0",NA,NA
+"100242","PHI-1742-041","restoration","permanent","early secondary forest","trees planted with 3m by 2m spacing","yes","yes","1742","1.0","0.0",NA,NA
+"100243","PHI-3417-002","control",NA,"open uncultivated land",NA,NA,NA,"3417",NA,NA,NA,NA
+"RPA-test_restoration","RPA-test_restoration","restoration","permanent","none","to be confirmed","yes","no","0000",NA,NA,NA,NA
+"RPA-test_control","RPA-test_control","control","permanent","control","not applicable","no","no","0000",NA,NA,NA,NA
+"CIC-test_restoration","CIC-test_restoration","restoration","permanent","none","to be confirmed","yes","no","0000",NA,NA,NA,NA
+"CIC-test_control","CIC-test_control","control","permanent","control","not applicable","no","no","0000",NA,NA,NA,NA
+"MDP-test_restoration","MDP-test_restoration","restoration","permanent","none","to be confirmed","yes","no","0000",NA,NA,NA,NA
+"MDP-test_control","MDP-test_control","control","permanent","control","not applicable","no","no","0000",NA,NA,NA,NA
+"PHI-test_restoration","PHI-test_restoration","restoration","permanent","none","to be confirmed","yes","no","0000",NA,NA,NA,NA
+"PHI-test_control","PHI-test_control","control","permanent","control","not applicable","no","no","0000",NA,NA,NA,NA

@@ -1,0 +1,247 @@
+﻿"plot_id","plot_type","plot_permanence","stratum","planting_pattern","planting_indicator","anr_indicator","site_id","resampling_30x30","resampling_3x3","large_trees_present","little_trees_present"
+"100000","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","yes","yes"
+"100001","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100002","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100003","control",NA,NA,NA,NA,NA,"274",NA,NA,NA,NA
+"100004","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100005","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100006","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100007","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100008","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100009","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100010","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100011","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100012","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100013","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100014","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100015","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100016","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100017","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100018","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100019","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100020","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100021","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100022","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100023","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100024","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","yes"
+"100025","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","274","2.0","2.0","no","no"
+"100026","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","275","2.0","2.0","no","no"
+"100027","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","275","2.0","2.0","no","no"
+"100028","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","275","2.0","2.0","yes","yes"
+"100029","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","275","2.0","2.0","no","yes"
+"100030","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","275","2.0","2.0","no","no"
+"100031","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","275","2.0","2.0","no","yes"
+"100032","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","275","2.0","2.0","yes","yes"
+"100033","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","275","0.0","2.0","yes","yes"
+"100034","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","302","2.0","2.0","no","yes"
+"100035","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","302","2.0","2.0","no","no"
+"100036","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","302","2.0","2.0","no","yes"
+"100037","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","302","2.0","2.0","no","no"
+"100038","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","302","2.0","2.0","no","no"
+"100039","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","302","2.0","0.0","no","yes"
+"100040","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","306","2.0","2.0","yes","no"
+"100041","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","306","0.0","0.0","no","no"
+"100042","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","306","2.0","0.0","no","yes"
+"100043","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","306","2.0","2.0","no","yes"
+"100044","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","306","0.0","0.0","yes","yes"
+"100045","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","306","2.0","2.0","no","no"
+"100046","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","307","2.0","2.0","no","yes"
+"100047","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","307","2.0","0.0","no","no"
+"100048","restoration",NA,NA,"trees were planted with a 3m by 2m spacing","yes","no","307","2.0","0.0","no","no"
+"100049","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","2.0",NA,"no"
+"100050","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100051","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100052","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","2.0",NA,"no"
+"100053","restoration",NA,"plantio em área total","3x3","yes","yes","2076","2.0","0.0","no",NA
+"100054","restoration",NA,"plantio em área total","3x3","yes","yes","2076","2.0","0.0","no",NA
+"100055","restoration",NA,"regeneração natural com manejo",NA,"no","yes","2076","0.0","0.0",NA,NA
+"100056","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100057","restoration",NA,"regeneração natural com manejo",NA,"no","yes","2076","0.0","0.0",NA,NA
+"100058","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100059","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100060","restoration",NA,"plantio em área total","3x2","yes","yes","2076","0.0","0.0",NA,NA
+"100061","restoration",NA,"plantio em área total","3x2","yes","yes","2076","0.0","0.0",NA,NA
+"100062","restoration",NA,"plantio em área total","3x2","yes","yes","2076","0.0","0.0",NA,NA
+"100063","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100064","restoration",NA,"plantio em área total","3x2","yes","yes","2076","0.0","0.0",NA,NA
+"100065","restoration",NA,"plantio em área total","3x2","yes","yes","2076","0.0","0.0",NA,NA
+"100066","restoration",NA,"plantio em área total","3x2","yes","yes","2076","0.0","0.0",NA,NA
+"100067","restoration",NA,"regeneração natural com manejo",NA,"no","yes","2076","0.0","0.0",NA,NA
+"100068","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100069","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100070","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100071","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100072","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100073","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100074","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100075","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100076","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100077","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100078","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100079","restoration",NA,"plantio em área total","3x3","yes","yes","2076","2.0","0.0","no",NA
+"100080","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100081","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100082","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100083","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100084","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100085","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100086","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100087","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100088","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100089","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100090","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100091","restoration",NA,"plantio em área total","3x3","yes","yes","2076","2.0","0.0","no",NA
+"100092","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100093","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100094","restoration",NA,"plantio em área total","3x3","yes","yes","2076","0.0","0.0",NA,NA
+"100095","restoration",NA,"plantio em área total","3x2","yes","yes","2076","0.0","0.0",NA,NA
+"100096","restoration",NA,"regeneração natural com manejo",NA,"no","yes","2076","0.0","0.0",NA,NA
+"100097","restoration",NA,"regeneração natural com manejo",NA,"no","yes","2076","0.0","0.0",NA,NA
+"100098","restoration",NA,"plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100099","restoration",NA,"plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100100","restoration",NA,"plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100101","restoration",NA,"plantio em área total","3x2","yes","yes","2049","0.0","0.0",NA,NA
+"100102","restoration",NA,"plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100103","restoration",NA,"plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100104","restoration",NA,"plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100105","restoration",NA,"plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100106","restoration",NA,"plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100107","restoration",NA,"plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100108","restoration",NA,"plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100109","restoration",NA,"plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100110","restoration",NA,"plantio em área total","3x3","yes","yes","2049","2.0","0.0","no",NA
+"100111","restoration",NA,"plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100112","restoration",NA,"plantio em área total","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100113","restoration",NA,"regeneração natural com manejo - adensamento","3x2","yes","yes","2049","0.0","0.0",NA,NA
+"100114","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100115","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100116","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100117","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2049","0.0","0.0",NA,NA
+"100118","restoration",NA,"regeneração natural com manejo","3x2","yes","yes","2049","0.0","0.0",NA,NA
+"100119","restoration",NA,"plantio em área total","3x3","yes","yes","2050","2.0","0.0","no",NA
+"100120","restoration",NA,"plantio em área total","3x2","yes","yes","2050","0.0","0.0",NA,NA
+"100121","restoration",NA,"plantio em área total","3x2","yes","yes","2050","0.0","0.0",NA,NA
+"100122","restoration",NA,"plantio em área total","3x2","yes","yes","2050","0.0","0.0",NA,NA
+"100123","restoration",NA,"plantio em área total","3x2","yes","yes","2050","0.0","0.0",NA,NA
+"100124","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2050","0.0","0.0",NA,NA
+"100125","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2050","0.0","0.0",NA,NA
+"100126","restoration",NA,"regeneração natural com manejo",NA,"no","yes","2050","0.0","0.0",NA,NA
+"100127","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2050","0.0","0.0",NA,NA
+"100128","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2050","0.0","0.0",NA,NA
+"100129","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2051","0.0","0.0",NA,NA
+"100130","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2051","0.0","0.0",NA,NA
+"100131","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2051","0.0","0.0",NA,NA
+"100132","restoration",NA,"regeneração natural com manejo","3x2","yes","yes","2051","0.0","0.0",NA,NA
+"100133","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2052","0.0","0.0",NA,NA
+"100134","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2052","0.0","0.0",NA,NA
+"100135","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2052","0.0","0.0",NA,NA
+"100136","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2052","0.0","0.0",NA,NA
+"100137","restoration",NA,"plantio em área total","3x3","yes","yes","2053","0.0","0.0",NA,NA
+"100138","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2053","0.0","0.0",NA,NA
+"100139","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2053","0.0","0.0",NA,NA
+"100140","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2053","0.0","0.0",NA,NA
+"100141","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2053","0.0","0.0",NA,NA
+"100142","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2053","0.0","0.0",NA,NA
+"100143","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2053","0.0","0.0",NA,NA
+"100144","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2053","0.0","0.0",NA,NA
+"100145","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2053","0.0","0.0",NA,NA
+"100146","restoration",NA,"regeneração natural com manejo - adensamento","3x2","yes","yes","2054","0.0","0.0",NA,NA
+"100147","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2054","0.0","0.0",NA,NA
+"100148","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2054","0.0","0.0",NA,NA
+"100149","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2054","0.0","0.0",NA,NA
+"100150","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2055","0.0","0.0",NA,NA
+"100151","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2055","0.0","0.0",NA,NA
+"100152","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2055","0.0","0.0",NA,NA
+"100153","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2055","0.0","0.0",NA,NA
+"100154","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2055","0.0","0.0",NA,NA
+"100155","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2055","0.0","0.0",NA,NA
+"100156","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2055","0.0","0.0",NA,NA
+"100157","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2056","0.0","0.0",NA,NA
+"100158","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2056","0.0","0.0",NA,NA
+"100159","restoration",NA,"regeneração natural com manejo",NA,"no","yes","2056","0.0","0.0",NA,NA
+"100160","restoration",NA,"regeneração natural com manejo",NA,"no","yes","2056","0.0","0.0",NA,NA
+"100161","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2056","0.0","0.0",NA,NA
+"100162","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2056","0.0","0.0",NA,NA
+"100163","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2056","0.0","0.0",NA,NA
+"100164","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2056","0.0","0.0",NA,NA
+"100165","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2056","0.0","0.0",NA,NA
+"100166","restoration",NA,"plantio em área total","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100167","restoration",NA,"plantio em área total","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100168","restoration",NA,"plantio em área total","3x2","yes","yes","2057","0.0","0.0",NA,NA
+"100169","restoration",NA,"plantio em área total","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100170","restoration",NA,"plantio em área total","3x2","yes","yes","2057","0.0","0.0",NA,NA
+"100171","restoration",NA,"plantio em área total","3x2","yes","yes","2057","0.0","0.0",NA,NA
+"100172","restoration",NA,"plantio em área total","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100173","restoration",NA,"plantio em área total","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100174","restoration",NA,"plantio em área total","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100175","restoration",NA,"plantio em área total","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100176","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100177","restoration",NA,"regeneração natural com manejo - adensamento","3x2","yes","yes","2057","0.0","0.0",NA,NA
+"100178","restoration",NA,"regeneração natural com manejo - adensamento","3x2","yes","yes","2057","0.0","0.0",NA,NA
+"100179","restoration",NA,"regeneração natural com manejo","3x2","yes","yes","2057","0.0","0.0",NA,NA
+"100180","restoration",NA,"regeneração natural com manejo - adensamento","3x2","yes","yes","2057","0.0","0.0",NA,NA
+"100181","restoration",NA,"regeneração natural com manejo - adensamento","3x2","yes","yes","2057","0.0","0.0",NA,NA
+"100182","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100183","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100184","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100185","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100186","restoration",NA,"plantio em área total","2.5 x 2.5","yes","yes","2057","2.0","0.0","no",NA
+"100187","restoration",NA,"regeneração natural com manejo - adensamento","3x2","yes","yes","2057","0.0","0.0",NA,NA
+"100188","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100189","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2057","0.0","0.0",NA,NA
+"100190","restoration",NA,"regeneração natural com manejo",NA,"no","yes","2057","0.0","0.0",NA,NA
+"100191","restoration",NA,"plantio em área total","plantio direto espaçamento 2x2","yes","yes","2057","2.0","0.0","no",NA
+"100192","restoration",NA,"plantio em área total","2.5 x 2.5","yes","yes","2057","2.0","0.0","no",NA
+"100193","restoration",NA,"regeneração natural com manejo",NA,"no","yes","2058","0.0","0.0",NA,NA
+"100194","restoration",NA,"regeneração natural com manejo",NA,"no","yes","2058","0.0","0.0",NA,NA
+"100195","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2059","0.0","0.0",NA,NA
+"100196","restoration",NA,"regeneração natural com manejo",NA,"no","yes","2059","0.0","0.0",NA,NA
+"100197","restoration",NA,"regeneração natural com manejo",NA,"no","yes","2061","0.0","0.0",NA,NA
+"100198","restoration",NA,"plantio em área total","3x3","yes","yes","2061","0.0","0.0",NA,NA
+"100199","restoration",NA,"plantio em área total","3x3","yes","yes","2061","0.0","0.0",NA,NA
+"100200","restoration",NA,"regeneração natural com manejo",NA,"no","yes","2061","0.0","0.0",NA,NA
+"100201","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2061","0.0","0.0",NA,NA
+"100202","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2061","0.0","0.0",NA,NA
+"100203","restoration",NA,"regeneração natural com manejo - adensamento","3x2","yes","yes","2061","0.0","0.0",NA,NA
+"100204","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2061","0.0","0.0",NA,NA
+"100205","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2061","0.0","0.0",NA,NA
+"100206","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2061","0.0","0.0",NA,NA
+"100207","restoration",NA,"regeneração natural com manejo","3x3","yes","yes","2061","0.0","0.0",NA,NA
+"100208","restoration",NA,"regeneração natural com manejo","3x2","yes","yes","2061","0.0","0.0",NA,NA
+"100209","restoration",NA,"regeneração natural com manejo",NA,"no","yes","2061","0.0","0.0",NA,NA
+"100210","restoration",NA,"regeneração natural com manejo - adensamento",NA,"no","yes","2073","0.0","0.0",NA,NA
+"100211","restoration",NA,"regeneração natural com manejo - adensamento",NA,"no","yes","2073","0.0","0.0",NA,NA
+"100212","restoration",NA,"regeneração natural com manejo - adensamento",NA,"no","yes","2073","0.0","0.0",NA,NA
+"100213","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2074","0.0","0.0",NA,NA
+"100214","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2075","0.0","0.0",NA,NA
+"100215","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2075","0.0","0.0",NA,NA
+"100216","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2075","0.0","0.0",NA,NA
+"100217","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2075","0.0","0.0",NA,NA
+"100218","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2075","0.0","0.0",NA,NA
+"100219","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2075","0.0","0.0",NA,NA
+"100220","restoration",NA,"regeneração natural com manejo - adensamento","3x3","yes","yes","2075","0.0","0.0",NA,NA
+"100221","restoration",NA,"regeneração natural com manejo","3 x 3","yes","yes","3427","2.0","1.0","yes",NA
+"100222","restoration",NA,"regeneração natural com manejo","3 x 3","yes","yes","3427","2.0","2.0","yes","yes"
+"100223","restoration",NA,"regeneração natural com manejo","3 x 3","yes","yes","3427","2.0","1.0","yes",NA
+"100224","restoration",NA,"regeneração natural com manejo","3 x 3","yes","yes","3428","2.0","2.0","yes","yes"
+"100225","restoration",NA,"regeneração natural com manejo","3 x 3","yes","yes","3428","2.0","2.0","yes","yes"
+"100226","restoration",NA,"regeneração natural com manejo","3 x 3","yes","yes","3428","2.0","2.0","yes","yes"
+"100227","restoration",NA,"regeneração natural com manejo","3 x 3","yes","yes","3428","2.0","2.0","yes","yes"
+"100228","restoration",NA,"regeneração natural com manejo","3 x 3","yes","yes","3429","2.0","1.0","no",NA
+"100229","restoration",NA,"regeneração natural com manejo","3 x 3","yes","yes","3430","2.0","2.0","yes","yes"
+"100230","restoration",NA,"plantio total","3 x 3","yes","yes","3430","2.0","1.0","yes",NA
+"100231","restoration",NA,"plantio total em área de pastagem degradada","3 x 3","yes","yes","3432","1.0","0.0",NA,NA
+"100232","restoration",NA,"plantio total em área de pastagem degradada","3 x 3","yes","yes","3432","1.0","0.0",NA,NA
+"100233","restoration",NA,"plantio total em área de pastagem degradada","3 x 3","yes","yes","3432","0.0","0.0",NA,NA
+"100234","restoration",NA,"plantio total","3 x 3","yes","yes","3433","0.0","0.0",NA,NA
+"100235","restoration",NA,"plantio total","3 x 3","yes","yes","3433","0.0","0.0",NA,NA
+"100236","restoration",NA,NA,"3x3","yes","yes","3433","1.0","1.0",NA,NA
+"100237","restoration",NA,"regeneração natural com manejo","3 x 3","yes","yes","3435","2.0","2.0","yes","yes"
+"100238","restoration",NA,"regeneração natural com manejo","3 x 3","yes","yes","3435","2.0","1.0","yes",NA
+"100239","restoration",NA,"regeneração natural com manejo","3 x 3","yes","yes","3438","2.0","2.0","yes","yes"
+"RPA-test_restoration","restoration","permanent","plant","to be confirmed","yes","no","0000",NA,NA,NA,NA
+"RPA-test_control","control","permanent","control","not applicable","no","no","0000",NA,NA,NA,NA
+"CIC-test_restoration","restoration","permanent","plant","to be confirmed","yes","no","0000",NA,NA,NA,NA
+"CIC-test_control","control","permanent","control","not applicable","no","no","0000",NA,NA,NA,NA
+"MDP-test_restoration","restoration","permanent","plant","to be confirmed","yes","no","0000",NA,NA,NA,NA
+"MDP-test_control","control","permanent","control","not applicable","no","no","0000",NA,NA,NA,NA

@@ -1,0 +1,29 @@
+# OS-specific files
+.DS_Store
+**/.DS_Store
+Thumbs.db
+
+# R-specific files
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user/
+.Renviron
+
+# VS Code
+_agy/
+
+# Antigravity
+.vscode/
+
+# Project-specific ignores
+_archive/*
+data/*
+database/*
+sandbox/*
+legacy_migration/legacy_data/*
+legacy_migration/legacy_qa_issues/*
+legacy_migration/legacy_tables/*
+legacy_migration/legacy_upload/*
+.RDataTmp
+!**/.gitkeep
