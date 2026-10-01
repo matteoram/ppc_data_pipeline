@@ -37,3 +37,6 @@ legacy_migration/legacy_upload/*
 
 # Ignore open Excel temporary files
 **/~$*.xlsx
+
+# Ignore archived legacy forms
+kobo_management/forms/_archive/
