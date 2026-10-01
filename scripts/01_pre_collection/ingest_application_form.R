@@ -63,9 +63,10 @@ write_conflict_report <- function(df, error_type, base_path) {
 form_files <- list.files(
   folder_path, pattern = "\\.xlsx$", full.names = TRUE, ignore.case = TRUE
 )
-# Ignore open excel temp files
+# Ignore open excel temp files and the species review file
 form_files <- form_files[
-  !grepl("~\\$", basename(form_files))
+  !grepl("~\\$", basename(form_files)) &
+  !grepl("Species", basename(form_files), ignore.case = TRUE)
 ]
 
 # Check that exactly one Excel file is found

@@ -52,8 +52,10 @@ file_plot_master    <- file.path(dir_database, "plot_master_file.csv")
 file_site_master    <- file.path(dir_database, "site_master_file.csv")
 
 # Tree Species Registry
-file_tree_species   <- here("kobo_management", "attachments", "tree_species_table.csv")
-file_master_species_excel <- file.path(dir_legacy_data, "Tree Species for Review 9.2026.xlsx")
+file_tree_species   <- here(
+  "kobo_management", "attachments", "tree_species_table.csv"
+)
+file_master_species_excel <- file.path(dir_db_update, "Tree Species for Review 10.2026.xlsx")
 
 # Legacy Migration Mapping Files
 file_map_orgs    <- file.path(dir_legacy_data, "map_organizations.xlsx")
