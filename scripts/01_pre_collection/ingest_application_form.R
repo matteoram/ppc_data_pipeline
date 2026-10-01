@@ -291,8 +291,7 @@ tryCatch({
   plots_to_insert <- new_plots |>
     left_join(db_sites_updated, by = "site_id") |>
     select(
-      site_key, plot_name, plot_type, plot_permanence, stratum, 
-      planting_pattern, planting_indicator, anr_indicator
+      site_key, plot_name, plot_type, plot_permanence
     ) |>
     anti_join(dbReadTable(con, "plots"), by = "plot_name")
     
@@ -301,6 +300,31 @@ tryCatch({
       con, "plots", plots_to_insert, append = TRUE, row.names = FALSE
     )
     message(sprintf(" -> Inserted %d new plots.", nrow(plots_to_insert)))
+  }
+  
+  # -#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
+  #region 3.5 Pre-baseline surveys
+  
+  db_plots_updated <- dbReadTable(con, "plots")
+  surveys_to_insert <- new_plots |>
+    left_join(db_plots_updated, by = "plot_name") |>
+    mutate(timeframe = "APP") |>
+    select(
+      plot_key, timeframe, stratum, planting_pattern, 
+      planting_indicator, anr_indicator
+    ) |>
+    anti_join(dbReadTable(con, "surveys"), by = c("plot_key", "timeframe"))
+    
+  if (nrow(surveys_to_insert) > 0) {
+    dbWriteTable(
+      con, "surveys", surveys_to_insert, append = TRUE, row.names = FALSE
+    )
+    message(
+      sprintf(
+        " -> Inserted %d pre-baseline 'APP' survey records.",
+        nrow(surveys_to_insert)
+      )
+    )
   }
   
   dbCommit(con)

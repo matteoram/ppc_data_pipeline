@@ -11,19 +11,29 @@ Thumbs.db
 .Renviron
 
 # VS Code
-_agy/
+.vscode/
 
 # Antigravity
-.vscode/
+_agy/
 
 # Project-specific ignores
 _archive/*
 data/*
 database/*
 sandbox/*
+kobo_management/attachments/*
 legacy_migration/legacy_data/*
 legacy_migration/legacy_qa_issues/*
 legacy_migration/legacy_tables/*
 legacy_migration/legacy_upload/*
 .RDataTmp
+
+# Re-allow empty directories to be tracked via .gitkeep
 !**/.gitkeep
+
+# Track static image assets in attachments, but ignore all CSVs and backups
+!kobo_management/attachments/*.jpg
+!kobo_management/attachments/*.png
+
+# Ignore open Excel temporary files
+**/~$*.xlsx
