@@ -1,7 +1,0 @@
-﻿"plot_id","plot_type","plot_permanence","stratum","planting_pattern","planting_indicator","anr_indicator","site_id","resampling_30x30","resampling_3x3","large_trees_present","little_trees_present"
-"100000","restoration",NA,"open uncultivated","portion were planted with 3m by 2m spacing","yes","yes","1742","0.0","1.0",NA,NA
-"100001","restoration",NA,"early secondary forest","trees were planted with a 3m by 2m spacing","yes","yes","1742","0.0","1.0",NA,NA
-"100002","restoration",NA,"early secondary forest","trees planted with 3m by 2m spacing","yes","yes","1742","1.0","0.0",NA,NA
-"100003","control",NA,"open uncultivated land",NA,"no","no","3417","0.0","1.0",NA,NA
-"PHI-test_restoration","restoration","permanent","plant","to be confirmed","yes","no","0000",NA,NA,NA,NA
-"PHI-test_control","control","permanent","control","not applicable","no","no","0000",NA,NA,NA,NA

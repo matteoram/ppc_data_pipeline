@@ -27,6 +27,7 @@ dir_raw_data     <- file.path(dir_data, "raw")
 dir_cleaned_data <- file.path(dir_data, "clean")
 
 dir_database     <- here("database")
+dir_db_update    <- file.path(dir_database, "update")
 dir_relational_db <- dir_database # Alias for legacy scripts
 
 dir_outputs      <- here("outputs")
