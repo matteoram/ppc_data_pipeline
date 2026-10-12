@@ -114,11 +114,152 @@ kobo_tree_data <- read_csv(
   show_col_types = FALSE
 )
 
-# Load tree species table
-tree_species_table <- read_csv(
-  file_tree_species,
-  show_col_types = FALSE
+# Load tree species table from master review Excel
+species_file_path <- if (exists("file_master_species_excel") && file.exists(file_master_species_excel)) {
+  file_master_species_excel
+} else {
+  species_files <- list.files(
+    dir_legacy_data, pattern = "Tree Species.*\\.xlsx$", full.names = TRUE, ignore.case = TRUE
+  )
+  species_files <- species_files[!grepl("~\\$", basename(species_files))]
+  if (length(species_files) > 0) sort(species_files, decreasing = TRUE)[1] else NULL
+}
+
+if (is.null(species_file_path) || !file.exists(species_file_path)) {
+  stop("Master species Excel file not found in legacy_data or config.R.")
+}
+
+message("--> Parsing tree species from: ", basename(species_file_path))
+
+clean_sheets <- c(
+  "WRI (Clean Data)", "CI_Juliana (Clean Data)", "CI_Yulan (Clean Data)", 
+  "Mada-New species", "Full List (Clean Data)"
 )
+master_list <- list()
+
+for (sheet in clean_sheets) {
+  tryCatch({
+    df <- read_excel(species_file_path, sheet = sheet)
+    if ("Species Names" %in% names(df)) {
+      df <- df %>% rename(scientific_name = `Species Names`)
+    }
+    
+    core_cols <- intersect(
+      names(df),
+      c("project_name", "scientific_name", "taxon_id", "Common names")
+    )
+    
+    df <- df %>%
+      select(all_of(core_cols)) %>%
+      rename(org_name = project_name) %>%
+      mutate(scientific_name = trimws(as.character(scientific_name)))
+      
+    if ("Common names" %in% names(df)) {
+      df <- df %>% rename(common_name = `Common names`) %>%
+        mutate(common_name = as.character(common_name))
+    } else {
+      df <- df %>% mutate(common_name = NA_character_)
+    }
+    if (!("taxon_id" %in% names(df))) {
+      df <- df %>% mutate(taxon_id = NA_character_)
+    }
+    
+    master_list[[sheet]] <- df %>%
+      select(org_name, scientific_name, taxon_id, common_name)
+  }, error = function(e) {
+    # Sheet doesn't exist, skip silently
+  })
+}
+
+if (length(master_list) == 0) {
+  stop("None of the expected sheets were found in the species file.")
+}
+
+map_org_id <- function(org_name) {
+  case_when(
+    org_name == "Accion Andina" ~ "AND",
+    org_name == "ACT" ~ "ACT",
+    org_name == "Amadese" ~ "AMA",
+    org_name == "AMBIO" ~ "AMB",
+    org_name == "APRN La Frailescana" | org_name == "La Frailescana" ~ "FRA",
+    org_name == "Café Capitan" | org_name == "Cafe Capitan" ~ "CAF",
+    org_name == "CEPAN" ~ "CEP",
+    org_name == "CERT" ~ "CER",
+    org_name == "CI Cambodia" ~ "CAM",
+    org_name == "CI China" ~ "CHI",
+    org_name == "CI Colombia" ~ "COL",
+    org_name == "CI Madagascar" ~ "MAD",
+    org_name == "CI Philippines" ~ "PHI",
+    org_name == "CICLOS" ~ "CIC",
+    org_name == "COOPERATIVA CANTEIROS" ~ "CAN",
+    org_name == "CUCOS" ~ "CUC",
+    org_name == "EMA" ~ "EMA",
+    org_name == "Emirates Nature WWF" ~ "UAE",
+    org_name == "Fafiala" ~ "FAF",
+    org_name == "Faja Lobi" ~ "FAL",
+    org_name == "Fedecovera" ~ "FED",
+    org_name == "GANB (2021)" | org_name == "GANB 2021" ~ "GAN",
+    org_name == "GANB (Flagship)" | org_name == "GANB FS" ~ "GAF",
+    org_name == "Green Belt Movement" | org_name == "GBM" ~ "GBM",
+    org_name == "Green Forests Work" | org_name == "GFW" ~ "GFW",
+    org_name == "Greening Australia" ~ "GAU",
+    org_name == "Grow Trees" ~ "GTR",
+    org_name == "ISA" ~ "ISA",
+    org_name == "IUCN Thailand" | org_name == "IUCN" ~ "THA",
+    org_name == "Macuiles" ~ "MAC",
+    org_name == "MDPS" ~ "MDP",
+    org_name == "MVGI" ~ "MVG",
+    org_name == "PEROA" ~ "PER",
+    org_name == "POLIMATA" ~ "POL",
+    org_name == "PRIMAFLORA" ~ "PRI",
+    org_name == "REBISE" ~ "BSE",
+    org_name == "REBISO" ~ "BSO",
+    org_name == "REBITRI" ~ "BTR",
+    org_name == "REBIVTA" ~ "BVT",
+    org_name == "Reforest Action (France)" | org_name == "Reforest Action France" ~ "RCH",
+    org_name == "Reforest Action (Portugal)" | org_name == "Reforest Action Portugal" ~ "RPR",
+    org_name == "Reforest Action (Spain)" | org_name == "Reforest Action Spain" ~ "RPA",
+    org_name == "TERI" ~ "TER",
+    org_name == "Toatsara" ~ "TOA",
+    org_name == "Tree Canada" ~ "TCA",
+    org_name == "UCIRI" ~ "UCI",
+    org_name == "Wells for Zoe" ~ "WFZ",
+    org_name == "WWF" ~ "WWF",
+    org_name == "COOPERATIVA CANTEIROS" ~ "CAN",
+    org_name == "FONCET" ~ "temp3", 
+    TRUE ~ NA_character_
+  )
+}
+
+combined_df <- bind_rows(master_list) %>%
+  filter(!is.na(scientific_name) & !is.na(org_name)) %>%
+  mutate(org_id = map_org_id(org_name)) %>%
+  filter(!is.na(org_id)) %>%
+  group_by(org_id, scientific_name) %>%
+  summarize(
+    taxon_id = first(na.omit(taxon_id), default = NA_character_), 
+    common_name = first(na.omit(common_name), default = NA_character_), 
+    .groups = "drop"
+  ) %>%
+  distinct()
+
+tree_species_table <- combined_df %>%
+  mutate(
+    common_name = ifelse(is.na(common_name) | trimws(common_name) == "" | tolower(common_name) == "nan", NA, trimws(common_name)),
+    label = ifelse(!is.na(common_name), paste0(scientific_name, " (", common_name, ")"), scientific_name),
+    name = scientific_name
+  ) %>%
+  select(name, label, org_id, taxon_id)
+
+unique_orgs <- unique(tree_species_table$org_id)
+other_df <- data.frame(
+  name = "Other or don't know", 
+  label = "Other or don't know", 
+  org_id = unique_orgs, 
+  taxon_id = NA_character_, 
+  stringsAsFactors = FALSE
+)
+tree_species_table <- bind_rows(tree_species_table, other_df) %>% arrange(org_id, name)
 
 # Load mapping files
 map_orgs <- read_xlsx(file_map_orgs, sheet="map_organizations")

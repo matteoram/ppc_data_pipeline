@@ -163,7 +163,14 @@ if (nrow(duplicate_surveys) > 0) {
 #region 2.2 Species
 
 message("--> [2/5] Checking species registry match...")
-global_species_registry <- read_csv(file_tree_species, show_col_types = FALSE)
+temp_harm_file <- file.path(dir_legacy, "legacy_tables", "temp", "harmonized_data.rds")
+if (exists("file_tree_species") && file.exists(file_tree_species)) {
+  global_species_registry <- read_csv(file_tree_species, show_col_types = FALSE)
+} else if (file.exists(temp_harm_file)) {
+  global_species_registry <- readRDS(temp_harm_file)$tree_species_table
+} else {
+  global_species_registry <- tree_species_table
+}
 names(global_species_registry)[1] <- "name" # Clean BOM if present
 
 unmapped_species <- setdiff(
