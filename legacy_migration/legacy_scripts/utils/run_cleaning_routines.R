@@ -236,13 +236,21 @@ clean_resample_info <- function(df) {
 
   bare_land_org_names <- c(
     "ACT",
-    "CHI",
-    "MAD",
-    "UAE",
-    "GFW",
-    "GAU",
-    "RCH",
-    "TCA"
+    "CHI", "CI China",
+    "MAD", "CI Madagascar",
+    "UAE", "Emirates Nature WWF",
+    "GFW", "Green Forests Work",
+    "GAU", "Greening Australia",
+    "RCH", "Reforest Action (France)", "Reforest Action France",
+    "TCA", "Tree Canada"
+  )
+
+  is_bare_land_plot <- (
+    if (
+      "org_name" %in% names(df)) df$org_name %in% bare_land_org_names else FALSE
+    ) |
+    (
+    if ("org_id" %in% names(df)) df$org_id %in% bare_land_org_names else FALSE
   )
 
   df <- df %>%
@@ -253,22 +261,22 @@ clean_resample_info <- function(df) {
   mutate(
     resampling_30x30 = case_when(
       tolower(plot_type) == "control" ~ NA_character_,
-      org_name %in% bare_land_org_names ~ NA_character_,
+      is_bare_land_plot ~ NA_character_,
       TRUE ~ resampling_30x30
     ),
     resampling_3x3 = case_when(
       tolower(plot_type) == "control" ~ NA_character_,
-      org_name %in% bare_land_org_names ~ NA_character_,
+      is_bare_land_plot ~ NA_character_,
       TRUE ~ resampling_3x3
     ),
     large_trees_present = case_when(
       tolower(plot_type) == "control" ~ NA_character_,
-      org_name %in% bare_land_org_names ~ NA_character_,
+      is_bare_land_plot ~ NA_character_,
       TRUE ~ large_trees_present
     ),
     little_trees_present = case_when(
       tolower(plot_type) == "control" ~ NA_character_,
-      org_name %in% bare_land_org_names ~ NA_character_,
+      is_bare_land_plot ~ NA_character_,
       TRUE ~ little_trees_present  
     )
   )

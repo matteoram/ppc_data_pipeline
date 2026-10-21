@@ -230,13 +230,18 @@ map_strata_filtered <- map_strata %>%
   arrange(desc(org_id != "ALL")) %>%
   distinct(stratum_name, .keep_all = TRUE)
 
+bare_land_projects <- c("ACT", "CHI", "MAD", "UAE", "GFW", "GAU", "RCH", "TCA")
+
 qa_logic_base <- surveys_table_filled %>%
   mutate(stratum_clean = trimws(stratum)) %>%
   left_join(map_strata_filtered %>% select(stratum_name, stratum_category), by = c("stratum_clean" = "stratum_name")) %>%
   left_join(plots_table_final %>% select(plot_name, plot_type) %>% distinct(), by = "plot_name") %>%
+  left_join(sites_table %>% select(site_id, bare_land) %>% distinct(site_id, .keep_all = TRUE), by = "site_id") %>%
   mutate(
     stratum_category = replace_na(stratum_category, "unmapped"),
-    plot_type = tolower(trimws(plot_type))
+    plot_type = tolower(trimws(plot_type)),
+    is_bare_land = (tolower(replace_na(bare_land, "no")) == "yes") | 
+                   (exists("target_org_code") && target_org_code %in% bare_land_projects)
   ) %>%
   group_by(plot_name) %>%
   mutate(
@@ -269,23 +274,23 @@ qa_logic_base <- surveys_table_filled %>%
 
 logic_failures <- qa_logic_base %>%
   mutate(
-    issue_Large_Present_NA = timeframe == "y0" & (is.na(resampling_30x30) | resampling_30x30 < 2) & !is.na(large_trees_present),
-    issue_Large_Present_Missing = timeframe == "y0" & (!is.na(resampling_30x30) & resampling_30x30 == 2) & !(large_trees_present %in% c("yes", "no")),
-    issue_Large_Trees_When_NA = timeframe == "y0" & is.na(resampling_30x30) & has_large == TRUE,
-    issue_Missing_Large_Under_2 = timeframe == "y0" & (!is.na(resampling_30x30) & resampling_30x30 < 2) & has_large == FALSE,
-    issue_Missing_Large_When_Yes = timeframe == "y0" & (!is.na(resampling_30x30) & resampling_30x30 == 2 & large_trees_present == "yes") & has_large == FALSE,
-    issue_Unexpected_Large_When_No = timeframe == "y0" & (!is.na(resampling_30x30) & resampling_30x30 == 2 & large_trees_present == "no") & has_large == TRUE,
+    issue_Large_Present_NA = !is_bare_land & timeframe == "y0" & (is.na(resampling_30x30) | resampling_30x30 < 2) & !is.na(large_trees_present),
+    issue_Large_Present_Missing = !is_bare_land & timeframe == "y0" & (!is.na(resampling_30x30) & resampling_30x30 == 2) & !(large_trees_present %in% c("yes", "no")),
+    issue_Large_Trees_When_NA = !is_bare_land & timeframe == "y0" & is.na(resampling_30x30) & has_large == TRUE,
+    issue_Missing_Large_Under_2 = !is_bare_land & timeframe == "y0" & (!is.na(resampling_30x30) & resampling_30x30 < 2) & has_large == FALSE,
+    issue_Missing_Large_When_Yes = !is_bare_land & timeframe == "y0" & (!is.na(resampling_30x30) & resampling_30x30 == 2 & large_trees_present == "yes") & has_large == FALSE,
+    issue_Unexpected_Large_When_No = !is_bare_land & timeframe == "y0" & (!is.na(resampling_30x30) & resampling_30x30 == 2 & large_trees_present == "no") & has_large == TRUE,
     
-    issue_Little_Present_NA = timeframe == "y0" & (is.na(resampling_3x3) | resampling_3x3 < 2) & !is.na(little_trees_present),
-    issue_Little_Present_Missing = timeframe == "y0" & (!is.na(resampling_3x3) & resampling_3x3 == 2) & !(little_trees_present %in% c("yes", "no")),
-    issue_Little_Trees_When_NA = timeframe == "y0" & is.na(resampling_3x3) & has_little_in_3x3 == TRUE,
-    issue_Missing_Little_Under_2 = timeframe == "y0" & (!is.na(resampling_3x3) & resampling_3x3 < 2) & has_little_in_3x3 == FALSE,
-    issue_Missing_Little_When_Yes = timeframe == "y0" & (!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "yes") & has_little_in_3x3 == FALSE,
-    issue_Unexpected_Little_When_No = timeframe == "y0" & (!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "no") & has_little_in_3x3 == TRUE,
+    issue_Little_Present_NA = !is_bare_land & timeframe == "y0" & (is.na(resampling_3x3) | resampling_3x3 < 2) & !is.na(little_trees_present),
+    issue_Little_Present_Missing = !is_bare_land & timeframe == "y0" & (!is.na(resampling_3x3) & resampling_3x3 == 2) & !(little_trees_present %in% c("yes", "no")),
+    issue_Little_Trees_When_NA = !is_bare_land & timeframe == "y0" & is.na(resampling_3x3) & has_little_in_3x3 == TRUE,
+    issue_Missing_Little_Under_2 = !is_bare_land & timeframe == "y0" & (!is.na(resampling_3x3) & resampling_3x3 < 2) & has_little_in_3x3 == FALSE,
+    issue_Missing_Little_When_Yes = !is_bare_land & timeframe == "y0" & (!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "yes") & has_little_in_3x3 == FALSE,
+    issue_Unexpected_Little_When_No = !is_bare_land & timeframe == "y0" & (!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "no") & has_little_in_3x3 == TRUE,
     
-    issue_Missing_Census = (has_little_in_census == FALSE) & !((!is.na(resampling_3x3) & resampling_3x3 < 2) | (!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "yes")),
+    issue_Missing_Census = !is_bare_land & (has_little_in_census == FALSE) & !((!is.na(resampling_3x3) & resampling_3x3 < 2) | (!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "yes")),
     
-    issue_Invalid_Census = (has_little_in_census == TRUE) & !(!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "no"),
+    issue_Invalid_Census = !is_bare_land & (has_little_in_census == TRUE) & !(!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "no"),
     
     pattern_is_no_planting = !is.na(planting_pattern) & grepl("(no|not).*plant", planting_pattern, ignore.case=TRUE),
     has_actual_pattern = !is.na(planting_pattern) & !pattern_is_no_planting,
@@ -337,8 +342,8 @@ logic_failures <- qa_logic_base %>%
     # Unmapped Stratum
     issue_Unmapped_Stratum     = !is.na(stratum) & stratum_category == "unmapped",
     
-    issue_y0_Missing_Resampling = (timeframe == "y0") & tolower(plot_type) != "control" & (is.na(resampling_30x30_orig) | is.na(resampling_3x3_orig)),
-    issue_y0_Extra_Resampling = (timeframe != "y0") & tolower(plot_type) != "control" & (!is.na(resampling_30x30_orig) | !is.na(resampling_3x3_orig))
+    issue_y0_Missing_Resampling = !is_bare_land & (timeframe == "y0") & tolower(plot_type) != "control" & (is.na(resampling_30x30_orig) | is.na(resampling_3x3_orig)),
+    issue_y0_Extra_Resampling = !is_bare_land & (timeframe != "y0") & tolower(plot_type) != "control" & (!is.na(resampling_30x30_orig) | !is.na(resampling_3x3_orig))
   ) %>%
   mutate(across(starts_with("issue_"), ~replace_na(., FALSE))) %>%
   filter(
@@ -418,6 +423,9 @@ if (nrow(logic_failures) > 0) {
 
 message("--> [4/5] Checking multiple resamplings...")
 multiple_resamplings <- surveys_table %>%
+  left_join(sites_table %>% select(site_id, bare_land) %>% distinct(site_id, .keep_all = TRUE), by = "site_id") %>%
+  filter(!((tolower(replace_na(bare_land, "no")) == "yes") | 
+           (exists("target_org_code") && target_org_code %in% bare_land_projects))) %>%
   filter((!is.na(resampling_30x30) & trimws(resampling_30x30) != "") | 
          (!is.na(resampling_3x3) & trimws(resampling_3x3) != "")) %>%
   group_by(plot_name) %>%
