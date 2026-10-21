@@ -104,6 +104,31 @@ countries_table <- read_csv(
   file.path(export_dir_base, "countries_table.csv"), show_col_types = FALSE
 )
 
+# Fix numeric casting issues from CSV read
+sites_table <- sites_table %>% mutate(
+  site_id = as.character(site_id),
+  site_name = as.character(site_name)
+)
+if ("org_id" %in% names(sites_table)) sites_table <- sites_table %>% mutate(org_id = as.character(org_id))
+if ("country_id" %in% names(sites_table)) sites_table <- sites_table %>% mutate(country_id = as.character(country_id))
+
+plots_table_final <- plots_table_final %>% mutate(
+  site_id = as.character(site_id)
+)
+
+if ("site_id" %in% names(surveys_table)) {
+  surveys_table <- surveys_table %>% mutate(site_id = as.character(site_id))
+}
+
+if ("site_id" %in% names(plot_candidates)) {
+  plot_candidates <- plot_candidates %>% mutate(site_id = as.character(site_id))
+}
+
+if ("org_id" %in% names(org_table)) org_table <- org_table %>% mutate(org_id = as.character(org_id))
+if ("country_id" %in% names(org_table)) org_table <- org_table %>% mutate(country_id = as.character(country_id))
+if ("country_id" %in% names(countries_table)) countries_table <- countries_table %>% mutate(country_id = as.character(country_id))
+
+
 survey_metadata <- surveys_table %>%
   select(plot_name, timeframe, uuid) %>%
   left_join(plots_table_final, by = "plot_name") %>%

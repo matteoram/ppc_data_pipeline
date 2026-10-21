@@ -55,7 +55,11 @@ file_site_master    <- file.path(dir_database, "site_master_file.csv")
 file_tree_species   <- here(
   "kobo_management", "attachments", "tree_species_table.csv"
 )
-file_master_species_excel <- if (file.exists(file.path(dir_legacy_data, "Tree Species for Review 10.2026.xlsx"))) {
+file_master_species_excel <- if (
+  file.exists(
+    file.path(dir_legacy_data, "Tree Species for Review 2026_21_10.xlsx")
+  )
+) {
   file.path(dir_legacy_data, "Tree Species for Review 10.2026.xlsx")
 } else {
   file.path(dir_db_update, "Tree Species for Review 10.2026.xlsx")
@@ -75,7 +79,7 @@ file_kobo_forms     <- "2026 Active-NonActive Kobo Forms.xlsx"
 file_kobo_plot      <- "plot_data_2026_09_23.csv"
 file_kobo_tree      <- "tree_data_2026_09_23.csv"
 file_dq_issues      <- "data_quality_issues_2026_05_12.xlsx"
-file_cleaning_log   <- "database_cleaning_2026_09_10.xlsx"
+file_cleaning_log   <- "database_cleaning_2026_10_21.xlsx"
 
 # -----------------------------------------------------------------------------
 # LOAD UTILITIES
