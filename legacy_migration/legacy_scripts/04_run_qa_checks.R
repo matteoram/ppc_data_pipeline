@@ -243,6 +243,7 @@ surveys_table_filled <- surveys_table %>%
   group_by(plot_name) %>%
   arrange(plot_name, timeframe) %>%
   mutate(
+    is_first_timeframe = (timeframe == first(timeframe)),
     resampling_30x30_orig = resampling_30x30,
     resampling_3x3_orig = resampling_3x3
   ) %>%
@@ -299,19 +300,19 @@ qa_logic_base <- surveys_table_filled %>%
 
 logic_failures <- qa_logic_base %>%
   mutate(
-    issue_Large_Present_NA = !is_bare_land & timeframe == "y0" & (is.na(resampling_30x30) | resampling_30x30 < 2) & !is.na(large_trees_present),
-    issue_Large_Present_Missing = !is_bare_land & timeframe == "y0" & (!is.na(resampling_30x30) & resampling_30x30 == 2) & !(large_trees_present %in% c("yes", "no")),
-    issue_Large_Trees_When_NA = !is_bare_land & timeframe == "y0" & is.na(resampling_30x30) & has_large == TRUE,
-    issue_Missing_Large_Under_2 = !is_bare_land & timeframe == "y0" & (!is.na(resampling_30x30) & resampling_30x30 < 2) & has_large == FALSE,
-    issue_Missing_Large_When_Yes = !is_bare_land & timeframe == "y0" & (!is.na(resampling_30x30) & resampling_30x30 == 2 & large_trees_present == "yes") & has_large == FALSE,
-    issue_Unexpected_Large_When_No = !is_bare_land & timeframe == "y0" & (!is.na(resampling_30x30) & resampling_30x30 == 2 & large_trees_present == "no") & has_large == TRUE,
+    issue_Large_Present_NA = !is_bare_land & is_first_timeframe & (is.na(resampling_30x30) | resampling_30x30 < 2) & !is.na(large_trees_present),
+    issue_Large_Present_Missing = !is_bare_land & is_first_timeframe & (!is.na(resampling_30x30) & resampling_30x30 == 2) & !(large_trees_present %in% c("yes", "no")),
+    issue_Large_Trees_When_NA = !is_bare_land & is_first_timeframe & is.na(resampling_30x30) & has_large == TRUE,
+    issue_Missing_Large_Under_2 = !is_bare_land & is_first_timeframe & (!is.na(resampling_30x30) & resampling_30x30 < 2) & has_large == FALSE,
+    issue_Missing_Large_When_Yes = !is_bare_land & is_first_timeframe & (!is.na(resampling_30x30) & resampling_30x30 == 2 & large_trees_present == "yes") & has_large == FALSE,
+    issue_Unexpected_Large_When_No = !is_bare_land & is_first_timeframe & (!is.na(resampling_30x30) & resampling_30x30 == 2 & large_trees_present == "no") & has_large == TRUE,
     
-    issue_Little_Present_NA = !is_bare_land & timeframe == "y0" & (is.na(resampling_3x3) | resampling_3x3 < 2) & !is.na(little_trees_present),
-    issue_Little_Present_Missing = !is_bare_land & timeframe == "y0" & (!is.na(resampling_3x3) & resampling_3x3 == 2) & !(little_trees_present %in% c("yes", "no")),
-    issue_Little_Trees_When_NA = !is_bare_land & timeframe == "y0" & is.na(resampling_3x3) & has_little_in_3x3 == TRUE,
-    issue_Missing_Little_Under_2 = !is_bare_land & timeframe == "y0" & (!is.na(resampling_3x3) & resampling_3x3 < 2) & has_little_in_3x3 == FALSE,
-    issue_Missing_Little_When_Yes = !is_bare_land & timeframe == "y0" & (!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "yes") & has_little_in_3x3 == FALSE,
-    issue_Unexpected_Little_When_No = !is_bare_land & timeframe == "y0" & (!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "no") & has_little_in_3x3 == TRUE,
+    issue_Little_Present_NA = !is_bare_land & is_first_timeframe & (is.na(resampling_3x3) | resampling_3x3 < 2) & !is.na(little_trees_present),
+    issue_Little_Present_Missing = !is_bare_land & is_first_timeframe & (!is.na(resampling_3x3) & resampling_3x3 == 2) & !(little_trees_present %in% c("yes", "no")),
+    issue_Little_Trees_When_NA = !is_bare_land & is_first_timeframe & is.na(resampling_3x3) & has_little_in_3x3 == TRUE,
+    issue_Missing_Little_Under_2 = !is_bare_land & is_first_timeframe & (!is.na(resampling_3x3) & resampling_3x3 < 2) & has_little_in_3x3 == FALSE,
+    issue_Missing_Little_When_Yes = !is_bare_land & is_first_timeframe & (!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "yes") & has_little_in_3x3 == FALSE,
+    issue_Unexpected_Little_When_No = !is_bare_land & is_first_timeframe & (!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "no") & has_little_in_3x3 == TRUE,
     
     issue_Missing_Census = !is_bare_land & (has_little_in_census == FALSE) & !((!is.na(resampling_3x3) & resampling_3x3 < 2) | (!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "yes")),
     
@@ -367,8 +368,7 @@ logic_failures <- qa_logic_base %>%
     # Unmapped Stratum
     issue_Unmapped_Stratum     = !is.na(stratum) & stratum_category == "unmapped",
     
-    issue_y0_Missing_Resampling = !is_bare_land & (timeframe == "y0") & tolower(plot_type) != "control" & (is.na(resampling_30x30_orig) | is.na(resampling_3x3_orig)),
-    issue_y0_Extra_Resampling = !is_bare_land & (timeframe != "y0") & tolower(plot_type) != "control" & (!is.na(resampling_30x30_orig) | !is.na(resampling_3x3_orig))
+    issue_y0_Missing_Resampling = !is_bare_land & is_first_timeframe & tolower(plot_type) != "control" & (is.na(resampling_30x30_orig) | is.na(resampling_3x3_orig))
   ) %>%
   mutate(across(starts_with("issue_"), ~replace_na(., FALSE))) %>%
   filter(
@@ -378,7 +378,7 @@ logic_failures <- qa_logic_base %>%
     issue_Missing_Little_Under_2 | issue_Missing_Little_When_Yes | issue_Unexpected_Little_When_No |
     issue_Missing_Census | issue_Invalid_Census | 
     issue_Pattern_Format_Invalid | issue_Intervention_Mismatch | issue_Unmapped_Stratum |
-    issue_y0_Missing_Resampling | issue_y0_Extra_Resampling
+    issue_y0_Missing_Resampling
   )
 
 if (nrow(logic_failures) > 0) {
@@ -407,7 +407,7 @@ if (nrow(logic_failures) > 0) {
               if(class_strat == "restoration") sprintf("stratum is '%s'", stratum) else NULL,
               if(class_patt == "restoration") sprintf("planting pattern is '%s'", replace_na(planting_pattern, "missing")) else NULL,
               if(class_ind == "restoration") "ONE OR MORE PLANTED TREES were recorded (planting indicator is 'yes')" else NULL,
-              if(class_group == "restoration") "TREES found in planted group (planting group = 'yes')" else NULL
+              if(class_group == "restoration") "one or more TREES FOUND IN PLANTED GROUP (planting group = 'yes')" else NULL
             ), collapse = " and "),
             ", BUT ",
             paste(c(
@@ -422,8 +422,7 @@ if (nrow(logic_failures) > 0) {
         if(issue_Tree_Count_Mismatch) sprintf("With planting pattern '%s' a total of %s planted trees should be observed, but only %s are actually entered", planting_pattern, round(expected_trees), total_planted_in_group) else NULL,
         
         if(issue_Unmapped_Stratum) sprintf("Stratum '%s' does not seem a valid stratum", stratum) else NULL,
-        if(issue_y0_Missing_Resampling) sprintf("Timeframe is 'y0', but resampling_30x30 is '%s' and resampling_3x3 is '%s'", resampling_30x30_orig, resampling_3x3_orig) else NULL,
-        if(issue_y0_Extra_Resampling) sprintf("Timeframe is '%s', but resampling_30x30 is '%s' and resampling_3x3 is '%s' (should be NA)", timeframe, resampling_30x30_orig, resampling_3x3_orig) else NULL
+        if(issue_y0_Missing_Resampling) sprintf("Timeframe is '%s', but resampling_30x30 is '%s' and resampling_3x3 is '%s'", timeframe, resampling_30x30_orig, resampling_3x3_orig) else NULL
       ), collapse = "\n• ")
     ) %>%
   mutate(across(starts_with("issue_"), ~replace_na(., FALSE))) %>%
@@ -453,10 +452,21 @@ multiple_resamplings <- surveys_table %>%
            (exists("target_org_code") && target_org_code %in% bare_land_projects))) %>%
   filter((!is.na(resampling_30x30) & trimws(resampling_30x30) != "") | 
          (!is.na(resampling_3x3) & trimws(resampling_3x3) != "")) %>%
+  arrange(plot_name, timeframe) %>%
   group_by(plot_name) %>%
   filter(n_distinct(timeframe) > 1) %>%
   summarise(
-    timeframes_resampled = paste(unique(timeframe), collapse = ", "),
+    resampling_details = paste(
+      sprintf(
+        "%s (resampling_30x30 = '%s', resampling_3x3 = '%s')",
+        timeframe,
+        coalesce(as.character(resampling_30x30), "NA"),
+        coalesce(as.character(resampling_3x3), "NA")
+      ),
+      collapse = " vs. "
+    ),
+    timeframe = paste(timeframe, collapse = ", "),
+    uuid = paste(uuid, collapse = ", "),
     .groups = "drop"
   )
 
@@ -464,15 +474,83 @@ if (nrow(multiple_resamplings) > 0) {
   qa_issues_list[[3]] <- multiple_resamplings %>%
     left_join(survey_metadata %>% select(plot_name, site_id, org_name, country_name) %>% distinct(plot_name, .keep_all = TRUE), by = "plot_name") %>%
     mutate(
-      timeframe = NA_character_,
-      uuid = NA_character_,
       org_name = coalesce(org_name, target_org),
       correct_value = NA_character_,
       resolved = NA_character_,
-      issue = sprintf("• Multiple Resamplings Warning for plot '%s'. It was resampled in multiple timeframes: %s", plot_name, timeframes_resampled),
+      issue = sprintf("• Multiple resamplings for plot '%s': resampled in %s", plot_name, resampling_details),
       note = NA_character_
     ) %>%
-    select(-timeframes_resampled)
+    select(-resampling_details)
+}
+
+#endregion
+# -#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
+#region 2.4b Cross-timeframe consistency
+
+message("--> [4b/5] Checking cross-timeframe attribute consistency...")
+cross_tf_vars <- c(
+  "plot_type",
+  "plot_permanence",
+  "stratum",
+  "planting_pattern",
+  "planting_indicator",
+  "planting_group",
+  "anr_indicator"
+)
+
+cross_tf_base <- surveys_table %>%
+  left_join(
+    plot_candidates %>%
+      select(uuid, plot_type, plot_permanence) %>%
+      distinct(uuid, .keep_all = TRUE),
+    by = "uuid"
+  ) %>%
+  group_by(plot_name) %>%
+  filter(n_distinct(timeframe) > 1) %>%
+  arrange(plot_name, timeframe) %>%
+  ungroup()
+
+if (nrow(cross_tf_base) > 0) {
+  cross_tf_issues <- cross_tf_base %>%
+    group_by(plot_name) %>%
+    summarise(
+      issue_text = {
+        grp_df <- pick(everything())
+        msgs <- character(0)
+        for (col in cross_tf_vars) {
+          if (col %in% names(grp_df)) {
+            vals <- coalesce(as.character(grp_df[[col]]), "NA")
+            if (n_distinct(vals) > 1) {
+              tf_vals <- paste(sprintf("%s is '%s'", grp_df$timeframe, vals), collapse = ", but ")
+              msgs <- c(msgs, sprintf("Inconsistent %s across timeframes: %s", col, tf_vals))
+            }
+          }
+        }
+        if (length(msgs) > 0) paste0("• ", paste(msgs, collapse = "\n• ")) else NA_character_
+      },
+      timeframe = paste(timeframe, collapse = ", "),
+      uuid = paste(uuid, collapse = ", "),
+      .groups = "drop"
+    ) %>%
+    filter(!is.na(issue_text))
+
+  if (nrow(cross_tf_issues) > 0) {
+    qa_issues_list[[4]] <- cross_tf_issues %>%
+      left_join(
+        survey_metadata %>%
+          select(plot_name, site_id, org_name, country_name) %>%
+          distinct(plot_name, .keep_all = TRUE),
+        by = "plot_name"
+      ) %>%
+      mutate(
+        org_name = coalesce(org_name, target_org),
+        issue = issue_text,
+        correct_value = NA_character_,
+        resolved = NA_character_,
+        note = NA_character_
+      ) %>%
+      select(-issue_text)
+  }
 }
 
 #endregion
