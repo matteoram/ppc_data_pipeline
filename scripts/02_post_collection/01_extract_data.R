@@ -619,8 +619,8 @@ write_to_csv <- function(data, prefix, date_stamp = TRUE, sub_dir = NULL) {
     filename <- paste0(path_prefix, ".csv")
   }
 
-  # 4. Write to file and print message
-  write.csv(data, filename, row.names = FALSE)
+  # 4. Write to file and print message (UTF-8 with BOM for Excel compatibility)
+  write_excel_csv(data, filename)
   cat(paste("Data written to:", filename), "\n")
 }
 

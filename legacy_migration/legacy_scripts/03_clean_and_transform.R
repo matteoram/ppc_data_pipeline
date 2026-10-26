@@ -50,9 +50,9 @@ library(stringr)
 library(readr)
 
 # Filtering parameters for the target organization and timeframe(s)
-target_org <- "CEPAN"
-target_org_code <- "CEP"
-target_time <- c("y0")
+target_org <- "EMA"
+target_org_code <- "EMA"
+target_time <- c("y0", "y2.5")
 target_year <- NULL #c(2023, 2024)
 
 # Define export directory for the target organization and timeframe(s)
@@ -769,34 +769,34 @@ if (!dir.exists(export_dir_base)) {
   dir.create(export_dir_base, recursive = TRUE, showWarnings = FALSE)
 }
 
-write_csv(
+write_excel_csv(
   plot_candidates, file.path(export_dir_base, "plot_candidates.csv")
 )
-write_csv(
+write_excel_csv(
   tree_species_table, file.path(export_dir_base, "tree_species_table.csv")
 )
-write_csv(
+write_excel_csv(
   countries_table, file.path(export_dir_base, "countries_table.csv")
 )
-write_csv(
+write_excel_csv(
   org_table_final, file.path(export_dir_base, "org_table.csv")
 )
-write_csv(
+write_excel_csv(
   sites_table_final, file.path(export_dir_base, "sites_table.csv")
 )
-write_csv(
+write_excel_csv(
   plots_table_final, file.path(export_dir_base, "plots_table.csv")
 )
-write_csv(
+write_excel_csv(
   surveys_table, file.path(export_dir_base, "surveys_table.csv")
 )
-write_csv(
+write_excel_csv(
   species_registry_final, file.path(export_dir_base, "species_registry.csv")
 )
-write_csv(
+write_excel_csv(
   org_species_lists_final, file.path(export_dir_base, "org_species_links.csv")
 )
-write_csv(
+write_excel_csv(
   tree_counts_table, file.path(export_dir_base, "tree_counts.csv")
 )
 
