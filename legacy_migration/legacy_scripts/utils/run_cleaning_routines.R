@@ -67,7 +67,25 @@ apply_cleaning_log <- function(
   # Create composite key only if key_components are specified
   if (!is.null(key_components)) {
     cleaning_log <- cleaning_log %>%
-      mutate(across(all_of(key_components), ~trimws(as.character(.)))) %>%
+      mutate(across(all_of(key_components), ~ {
+        val <- trimws(as.character(.))
+        ifelse(val %in% c("NA", "na", "NA_character_", ""), NA_character_, val)
+      }))
+
+    if ("tree_type" %in% key_components) {
+      cleaning_log <- cleaning_log %>%
+        mutate(
+          tree_type = case_when(
+            str_detect(tree_type, regex("planted", ignore_case = TRUE)) ~ "planted",
+            str_detect(tree_type, regex("present", ignore_case = TRUE)) ~ "present",
+            str_detect(tree_type, regex("regenerating", ignore_case = TRUE)) ~ "regenerating",
+            str_detect(tree_type, regex("know", ignore_case = TRUE)) ~ "unknown",
+            TRUE ~ tree_type
+          )
+        )
+    }
+
+    cleaning_log <- cleaning_log %>%
       unite(!!sym(key_col), all_of(key_components), sep = "_", remove = FALSE)
   }
   
@@ -403,7 +421,25 @@ execute_cleaning_pipeline <- function(df, cleaning_file_path, df_name = "df") {
     )
   }
 
-  # 3.3. Apply Tree-Level Deletion Log
+  # 3.2b. Apply Plot-Level External Cleaning Log
+  if (all(c("plot_name", "uuid") %in% names(df))) {
+    df <- apply_cleaning_log(
+      df = df,
+      log_file_path = cleaning_file_path,
+      sheet_name = "plot",
+      key_col = "uuid",
+      key_components = NULL,
+      df_name = df_name
+    )
+  }
+
+  # 3.3. Clean Tree Type (before applying tree cleaning logs so composite keys match QA outputs)
+  # Checks for all variables required by the internal logic of clean_tree_type()
+  if (all(c("tree_type", "timeframe", "size_class", "plot_size") %in% names(df))) {
+    df <- clean_tree_type(df)
+  }
+
+  # 4.1. Apply Tree-Level Deletion Log
   if (all(c("uuid", "species", "tree_type", "size_class") %in% names(df))) {
     df <- df %>%
       mutate(temp_tree_composite_key = paste(uuid, species, tree_type, size_class, sep = "_"))
@@ -421,19 +457,7 @@ execute_cleaning_pipeline <- function(df, cleaning_file_path, df_name = "df") {
     df <- df %>% select(-temp_tree_composite_key)
   }
 
-  # 3.2. Apply Plot-Level External Cleaning Log
-  if (all(c("plot_name", "uuid") %in% names(df))) {
-    df <- apply_cleaning_log(
-      df = df,
-      log_file_path = cleaning_file_path,
-      sheet_name = "plot",
-      key_col = "uuid",
-      key_components = NULL,
-      df_name = df_name
-    )
-  }
-
-  # 3.3. Apply Tree-Level External Cleaning Log
+  # 4.2. Apply Tree-Level External Cleaning Log
   if (all(c("uuid", "species", "tree_type", "size_class") %in% names(df))) {
     
     # Create a composite key on the fly for matching
@@ -451,12 +475,6 @@ execute_cleaning_pipeline <- function(df, cleaning_file_path, df_name = "df") {
     
     # Clean up the temporary key
     df <- df %>% select(-temp_tree_composite_key)
-  }
-  
-  # 4. Clean Tree Type
-  # Checks for all variables required by the internal logic of clean_tree_type()
-  if (all(c("tree_type", "timeframe", "size_class", "plot_size") %in% names(df))) {
-    df <- clean_tree_type(df)
   }
   
   # 5. Clean Resampling Info

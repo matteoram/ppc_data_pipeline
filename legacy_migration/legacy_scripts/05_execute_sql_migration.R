@@ -48,6 +48,8 @@ library(tidyr)
 library(readxl)
 library(stringr)
 library(readr)
+library(DBI)
+library(RSQLite)
 
 # Define export directory for the target organization and timeframe(s)
 export_dir_base <- file.path(

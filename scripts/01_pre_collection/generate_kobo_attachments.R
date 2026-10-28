@@ -22,7 +22,6 @@
 # -#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
 #region 0 Packages and configuration
 
-
 library(DBI)
 library(RSQLite)
 library(dplyr)
@@ -276,12 +275,17 @@ tree_count_reminders <- tree_summary %>%
     reminder_ge_1cm_dbh = any_of("reminder_>1cm")
   )
 
-write_excel_csv(tree_count_reminders, file.path(out_dir, "attachment_tree_count_reminders.csv"))
+write_excel_csv(
+  tree_count_reminders,
+  file.path(out_dir, "attachment_tree_count_reminders.csv")
+)
 
 # -#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
 #region 5 Cleanup
 
 dbDisconnect(con)
-message("All 9 Kobo attachments successfully generated in kobo_management/attachments/")
+message(
+  "All 9 Kobo attachments successfully generated in kobo_management/attachments/"
+)
 # -#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
 # END

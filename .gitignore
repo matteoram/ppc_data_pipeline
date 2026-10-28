@@ -17,6 +17,7 @@ Thumbs.db
 _agy/
 
 # Project-specific ignores
+legacy_migration/legacy_scripts/utils/view_plot_by_uuid.R
 _archive/*
 data/*
 database/*
