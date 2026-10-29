@@ -56,7 +56,7 @@ file_tree_species   <- here(
   "kobo_management", "attachments", "tree_species_table.csv"
 )
 file_master_species_excel <- file.path(
-  dir_legacy_data, "Tree Species for Review 2026_21_10.xlsx"
+  dir_legacy_data, "Tree Species for Review 2026_10_29.xlsx"
 )
 
 # Legacy Migration Mapping Files
@@ -70,8 +70,8 @@ file_map_columns <- file.path(dir_legacy_data, "map_columns.xlsx")
 file_site_data      <- "sites-ppc.csv"
 file_site_size_data <- "site_size_data.csv"
 file_kobo_forms     <- "2026 Active-NonActive Kobo Forms.xlsx"
-file_kobo_plot      <- "plot_data_2026_09_23.csv"
-file_kobo_tree      <- "tree_data_2026_09_23.csv"
+file_kobo_plot      <- "plot_data_2026_10_28.csv"
+file_kobo_tree      <- "tree_data_2026_10_28.csv"
 file_dq_issues      <- "data_quality_issues_2026_05_12.xlsx"
 file_cleaning_log   <- "database_cleaning_2026_10_21.xlsx"
 
