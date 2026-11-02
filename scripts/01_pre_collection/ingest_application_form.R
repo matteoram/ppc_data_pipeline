@@ -28,13 +28,14 @@
 source(here::here("scripts/utils/config.R"))
 library(here)
 library(dplyr)
+library(stringr)
 library(readxl)
 library(DBI)
 library(RSQLite)
 library(openxlsx)
 
 # NOTE: Specify the folder name inside database/update/ that contains the form
-target_folder <- "CANTEIROS_Y0"
+target_folder <- "ISA_Y0"
 db_path <- file.path(dir_database, "ppc_database.sqlite")
 folder_path <- file.path(dir_db_update, target_folder)
 
