@@ -111,6 +111,11 @@ message("--> Generating temporary keys...")
 site_data_temp_key <- generate_temp_keys(site_data_harm)
 site_size_data_temp_key <- generate_temp_keys(site_size_data_harm)
 kobo_plot_data_temp_key <- generate_temp_keys(kobo_plot_data_harm)
+
+# Ensure tree_species_other column exists so cleaning log can update it
+if (!"tree_species_other" %in% names(kobo_tree_data_harm)) {
+  kobo_tree_data_harm$tree_species_other <- NA_character_
+}
 kobo_tree_data_temp_key <- generate_temp_keys(kobo_tree_data_harm)
 
 #endregion
@@ -720,6 +725,7 @@ tree_counts_table <- kobo_tree_data_clean %>%
     tree_type,
     size_class,
     tree_count,
+    tree_species_other,
     origin_table,
     uuid
   ) %>%

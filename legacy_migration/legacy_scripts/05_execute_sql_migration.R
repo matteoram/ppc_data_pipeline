@@ -299,13 +299,17 @@ if(nrow(new_org_links) > 0) dbAppendTable(con, "org_species_links", new_org_link
 # -#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-#-
 #region 2.8 Tree counts
 
+if (!"tree_species_other" %in% names(tree_counts_table)) {
+  tree_counts_table$tree_species_other <- NA_character_
+}
+
 trees_ready <- tree_counts_table %>%
 
   # Join to get the survey_key using plot_name and timeframe
   left_join(survey_lookup, by = c("plot_name", "timeframe")) %>%
   # Join to get the species_key
   left_join(db_species, by = c("species" = "scientific_name")) %>%
-  select(survey_key, species_key, tree_type, size_class, tree_count)
+  select(survey_key, species_key, tree_type, size_class, tree_count, tree_species_other)
 
 # Only insert trees belonging to the surveys we JUST inserted
 # To do this, we lookup the survey_keys for the newly inserted UUIDs

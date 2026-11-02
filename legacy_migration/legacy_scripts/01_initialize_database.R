@@ -189,6 +189,7 @@ dbExecute(con, "
     tree_type TEXT NOT NULL,
     size_class TEXT NOT NULL,
     tree_count REAL NOT NULL,
+    tree_species_other TEXT,
     FOREIGN KEY(survey_key) REFERENCES surveys(survey_key) ON DELETE CASCADE,
     FOREIGN KEY(species_key) REFERENCES species(species_key) ON DELETE RESTRICT
   );

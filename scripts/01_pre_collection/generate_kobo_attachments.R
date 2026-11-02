@@ -241,7 +241,13 @@ aux_tree_prep <- db_trees %>%
   left_join(db_species %>% select(species_key, scientific_name), by="species_key") %>%
   mutate(
     time_numeric = suppressWarnings(as.numeric(str_extract(timeframe, "\\d+"))),
-    time_numeric = replace_na(time_numeric, 0)
+    time_numeric = replace_na(time_numeric, 0),
+    display_species = case_when(
+      scientific_name == "Other or don't know" & 
+        !is.na(tree_species_other) & 
+        trimws(tree_species_other) != "" ~ trimws(tree_species_other),
+      TRUE ~ scientific_name
+    )
   )
 
 aux_tree_latest <- aux_tree_prep %>%
@@ -253,7 +259,7 @@ tree_summary <- aux_tree_latest %>%
   group_by(plot_key, timeframe, size_class) %>%
   summarise(
     message = paste(
-      " -- ", tree_count, " ", scientific_name, " (", tree_type, ")", 
+      " -- ", tree_count, " ", display_species, " (", tree_type, ")", 
       sep = "", collapse = ""
     ),
     .groups = "drop"
