@@ -349,30 +349,38 @@ harmonize_identifiers <- function(
     # Recast as character to remove labels
     df[[species_col]] <- as.character(df[[species_col]])
     
+    # Helper to strip surrounding quotes/backslashes and normalize whitespace
+    normalize_species <- function(x) {
+      res <- gsub("^[[:space:]\"'\\\\]+|[[:space:]\"'\\\\]+$", "", as.character(x))
+      res <- stringr::str_squish(res)
+      res[is.na(x) | is.na(res) | res == ""] <- NA_character_
+      res
+    }
+
     # Split the semicolon-separated potential names into individual elements
     split_names <- strsplit(as.character(map_species$potential_names), ";")
     
     # Replicate the correct names to match the length of the split names
     replicated_correct <- rep(map_species$correct_name, lengths(split_names))
     
-    # Create a lookup table with trimmed keys and values
+    # Create a lookup table with normalized keys and trimmed correct names
     species_lookup <- data.frame(
-      potential = trimws(unlist(split_names)),
+      potential = normalize_species(unlist(split_names)),
       correct = trimws(replicated_correct),
       stringsAsFactors = FALSE
     )
     
-    # Target original column dynamically
-    df_values <- trimws(as.character(df[[species_col]]))
+    # Target original column dynamically and normalize for matching
+    df_values <- normalize_species(df[[species_col]])
     
     # Match the values to the lookup table
     match_indices <- match(df_values, species_lookup$potential)
     
-    # Replace matched names with correct names or keep original values
+    # Replace matched names with correct names or keep cleaned original values
     df[[species_col]] <- ifelse(
       !is.na(match_indices), 
       species_lookup$correct[match_indices], 
-      df[[species_col]]
+      df_values
     )
   }
 

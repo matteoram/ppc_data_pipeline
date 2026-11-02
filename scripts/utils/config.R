@@ -66,6 +66,10 @@ file_map_plots   <- file.path(dir_legacy_data, "map_plots.xlsx")
 file_map_species <- file.path(dir_legacy_data, "map_species.xlsx")
 file_map_columns <- file.path(dir_legacy_data, "map_columns.xlsx")
 
+# KoBoToolbox Asset Configuration
+kobo_asset_name <- "NEW Tree Monitoring Form"
+kobo_asset_uid  <- "aLXWzgVxSSHnzEGhtbi2sH"
+
 # Legacy Target Data Files (Dynamic)
 file_site_data      <- "sites-ppc.csv"
 file_site_size_data <- "site_size_data.csv"
