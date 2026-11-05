@@ -56,7 +56,7 @@ file_tree_species   <- here(
   "kobo_management", "attachments", "tree_species_table.csv"
 )
 file_master_species_excel <- file.path(
-  dir_legacy_data, "Tree Species for Review 2026_10_29.xlsx"
+  dir_legacy_data, "Tree Species for Review 2026_11_03.xlsx"
 )
 
 # Legacy Migration Mapping Files

@@ -215,16 +215,16 @@ dbExecute(con, "
   END;
 ")
 
-dbExecute(con, "
-  CREATE TRIGGER IF NOT EXISTS check_planting_pattern_consistency_insert
-  BEFORE INSERT ON surveys
-  FOR EACH ROW
-  WHEN (NEW.planting_indicator = 'yes' AND NEW.planting_pattern IS NULL)
-    OR (NEW.planting_indicator = 'no' AND NEW.planting_pattern IS NOT NULL)
-  BEGIN
-      SELECT RAISE(ABORT, 'ERROR: If planting_indicator is yes, planting_pattern cannot be null. If no, it must be null.');
-  END;
-")
+# dbExecute(con, "
+#   CREATE TRIGGER IF NOT EXISTS check_planting_pattern_consistency_insert
+#   BEFORE INSERT ON surveys
+#   FOR EACH ROW
+#   WHEN (NEW.planting_group = 'yes' AND NEW.planting_pattern IS NULL)
+#     OR (NEW.planting_group = 'no' AND NEW.planting_pattern IS NOT NULL)
+#   BEGIN
+#       SELECT RAISE(ABORT, 'ERROR: If planting_group is yes, planting_pattern cannot be null. If no, it must be null.');
+#   END;
+# ")
 
 dbExecute(con, "
   CREATE TRIGGER IF NOT EXISTS check_planted_tree_consistency_insert
@@ -238,17 +238,17 @@ dbExecute(con, "
   END;
 ")
 
-dbExecute(con, "
-  CREATE TRIGGER IF NOT EXISTS check_anr_tree_consistency_insert
-  BEFORE INSERT ON tree_counts
-  FOR EACH ROW
-  WHEN NEW.size_class = '<1cm' AND EXISTS (
-    SELECT 1 FROM surveys WHERE survey_key = NEW.survey_key AND anr_indicator = 'no'
-  )
-  BEGIN
-      SELECT RAISE(ABORT, 'ERROR: Cannot insert an ANR (<1cm) tree observation if the parent survey has anr_indicator = no.');
-  END;
-")
+# dbExecute(con, "
+#   CREATE TRIGGER IF NOT EXISTS check_anr_tree_consistency_insert
+#   BEFORE INSERT ON tree_counts
+#   FOR EACH ROW
+#   WHEN NEW.size_class = '<1cm' AND EXISTS (
+#     SELECT 1 FROM surveys WHERE survey_key = NEW.survey_key AND anr_indicator = 'no'
+#   )
+#   BEGIN
+#       SELECT RAISE(ABORT, 'ERROR: Cannot insert an ANR (<1cm) tree observation if the parent survey has anr_indicator = no.');
+#   END;
+# ")
 
 dbExecute(con, "
   CREATE TRIGGER IF NOT EXISTS check_large_trees_consistency_insert

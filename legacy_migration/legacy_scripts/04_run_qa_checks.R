@@ -319,10 +319,18 @@ logic_failures <- qa_logic_base %>%
     
     issue_Invalid_Census = !is_bare_land & !is_control & (has_little_in_census == TRUE) & !(!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "no"),
     
-    pattern_is_no_planting = !is.na(planting_pattern) & grepl("(no|not).*plant", planting_pattern, ignore.case=TRUE),
-    has_actual_pattern = !is.na(planting_pattern) & !pattern_is_no_planting,
+    pattern_is_no_planting = !is.na(planting_pattern) & (
+      grepl("(^|[[:space:]])(no|not|non|não|nao|sem|sin|pas|aucun|ningun|ningún|nenhum|sans|without|zero|0)($|[[:space:]]).*(plant|semead|siembr|semis)", planting_pattern, ignore.case=TRUE) |
+      grepl("^(none|nenhum|ninguno|aucun|n/?a)$", trimws(planting_pattern), ignore.case = TRUE)
+    ),
+    has_actual_pattern = !is.na(planting_pattern) & trimws(planting_pattern) != "" & !pattern_is_no_planting,
     
-    issue_Pattern_Format_Invalid = has_actual_pattern & trimws(planting_pattern) != "" & !grepl("x|by|m|ft|feet|meter|metre|pour|para|\\d", planting_pattern, ignore.case=TRUE),
+    issue_Pattern_Format_Invalid = has_actual_pattern & 
+      (is.na(planting_group) | planting_group != "no") &
+      !grepl("x|by|m|ft|feet|meter|metre|pour|para|\\d", planting_pattern, ignore.case=TRUE),
+    
+    issue_Planting_Pattern_Consistency = (!is.na(planting_group) & planting_group == "no" & !is.na(planting_pattern) & trimws(planting_pattern) != "") |
+                                         (!is.na(planting_group) & planting_group == "yes" & (is.na(planting_pattern) | trimws(planting_pattern) == "")),
     
     # --- Consolidated Intervention Coherence ---
     class_type = case_when(
@@ -348,8 +356,8 @@ logic_failures <- qa_logic_base %>%
       TRUE ~ "unknown"
     ),
     class_group = case_when(
-      has_actual_pattern & planting_group == "no" ~ "control",
       planting_group == "yes" ~ "restoration",
+      planting_group == "no" & (has_actual_pattern | !is_anr_plot) ~ "control",
       TRUE ~ "unknown"
     ),
     restoration_count = (class_type == "restoration") + (class_strat == "restoration") + (class_patt == "restoration") + (class_ind == "restoration") + (class_group == "restoration"),
@@ -379,7 +387,7 @@ logic_failures <- qa_logic_base %>%
     issue_Missing_Little_Under_2 | issue_Missing_Little_When_Yes | issue_Unexpected_Little_When_No |
     issue_Missing_Census | issue_Invalid_Census | 
     issue_Pattern_Format_Invalid | issue_Intervention_Mismatch | issue_Unmapped_Stratum |
-    issue_y0_Missing_Resampling
+    issue_y0_Missing_Resampling | issue_Planting_Pattern_Consistency
   )
 
 if (nrow(logic_failures) > 0) {
@@ -400,7 +408,15 @@ if (nrow(logic_failures) > 0) {
         if(issue_Unexpected_Little_When_No) "little_trees_present is 'no', but little trees WERE found" else NULL,
         if(issue_Missing_Census) sprintf("resampling_3x3 is '%s' and little_trees_present is '%s', so census trees SHOULD exist", resampling_3x3, little_trees_present) else NULL,
         if(issue_Invalid_Census) sprintf("Census trees found, but resampling_3x3 is '%s' and little_trees_present is '%s' (expected 2 and 'no')", resampling_3x3, little_trees_present) else NULL,
-        if(issue_Pattern_Format_Invalid) sprintf("Plot type is '%s' and planting pattern '%s' appears to have an invalid format", plot_type, planting_pattern) else NULL,
+        if(issue_Pattern_Format_Invalid && !issue_Intervention_Mismatch) sprintf("Plot type is '%s' and planting pattern '%s' appears to have an invalid format", plot_type, planting_pattern) else NULL,
+        
+        if(issue_Planting_Pattern_Consistency && !issue_Intervention_Mismatch) {
+          if(!is.na(planting_group) && planting_group == "no") {
+            sprintf("planting_group is 'no', but planting_pattern is '%s' (expected NA)", planting_pattern)
+          } else {
+            "planting_group is 'yes', but planting_pattern is missing (expected valid pattern)"
+          }
+        } else NULL,
         
         if(issue_Intervention_Mismatch) paste0(
             paste(c(
@@ -414,7 +430,15 @@ if (nrow(logic_failures) > 0) {
             paste(c(
               if(class_type == "control") sprintf("plot_type is '%s'", plot_type) else NULL,
               if(class_strat == "control") sprintf("stratum is '%s'", stratum) else NULL,
-              if(class_patt == "control") sprintf("planting pattern is '%s'", replace_na(planting_pattern, "missing")) else NULL,
+              if(class_patt == "control") {
+                if (pattern_is_no_planting) {
+                  sprintf("planting pattern indicates no planting ('%s')", planting_pattern)
+                } else if (is.na(planting_pattern) || trimws(planting_pattern) == "") {
+                  "no planting pattern was provided"
+                } else {
+                  sprintf("planting pattern is '%s'", planting_pattern)
+                }
+              } else NULL,
               if(class_ind == "control") "NO PLANTED TREES recorded (planting indicator is 'no')" else NULL,
               if(class_group == "control") paste0("NO TREE is found in planted group (planting_group = 'no')", if(class_ind == "restoration" && !is.na(planted_tree_tables) && planted_tree_tables != "") sprintf(" (planted trees are found in %s)", planted_tree_tables) else "") else NULL
             ), collapse = " and ")

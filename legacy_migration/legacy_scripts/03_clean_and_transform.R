@@ -50,8 +50,8 @@ library(stringr)
 library(readr)
 
 # Filtering parameters for the target organization and timeframe(s)
-target_org <- "EMA"
-target_org_code <- "EMA"
+target_org <- "GANB (2021)"
+target_org_code <- "GAN"
 target_time <- c("y0", "y2.5")
 target_year <- NULL #c(2023, 2024)
 
@@ -556,11 +556,12 @@ resampling_attributes_kobo_tree <- kobo_tree_data_clean %>%
     plot_size,
     size_class,
     tree_type
-  ) %>%
+  )
 
-  # Add resampling info from kobo_plot_data
+# Add tree attributes to plot resampling info
+plot_resampling_attributes <- resampling_plot_attributes_kobo_plot %>%
   left_join(
-    resampling_plot_attributes_kobo_plot,
+    resampling_attributes_kobo_tree,
     by = c("temp_plot_key", "uuid"),
     relationship = "many-to-many"
   ) %>%
@@ -581,7 +582,7 @@ plots_table_with_attr <- plots_table_base %>%
   ) %>%
   # Join the cleaned and flattened Kobo/Tree resampling data
   left_join(
-    resampling_attributes_kobo_tree, 
+    plot_resampling_attributes, 
     by = c("temp_plot_key", "uuid")
   ) %>%
   
