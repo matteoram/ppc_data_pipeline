@@ -23,6 +23,8 @@ database/*
 sandbox/*
 kobo_management/attachments/*
 legacy_migration/legacy_data/*
+legacy_migration/legacy_plan/
+legacy_migration/legacy_plan/*
 legacy_migration/legacy_qa_issues/*
 legacy_migration/legacy_tables/*
 legacy_migration/legacy_upload/*
