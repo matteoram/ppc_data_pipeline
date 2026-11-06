@@ -301,19 +301,19 @@ qa_logic_base <- surveys_table_filled %>%
 
 logic_failures <- qa_logic_base %>%
   mutate(
-    issue_Large_Present_NA = !is_bare_land & !is_control & is_first_timeframe & (is.na(resampling_30x30) | resampling_30x30 < 2) & !is.na(large_trees_present),
+    issue_Large_Present_NA = !is_bare_land & !is_control & is_first_timeframe & (!is.na(resampling_30x30) & resampling_30x30 < 2) & !is.na(large_trees_present),
     issue_Large_Present_Missing = !is_bare_land & !is_control & is_first_timeframe & (!is.na(resampling_30x30) & resampling_30x30 == 2) & !(large_trees_present %in% c("yes", "no")),
     issue_Large_Trees_When_NA = !is_bare_land & !is_control & is_first_timeframe & is.na(resampling_30x30) & has_large == TRUE,
-    issue_Missing_Large_Under_2 = !is_bare_land & !is_control & is_first_timeframe & (!is.na(resampling_30x30) & resampling_30x30 < 2) & has_large == FALSE,
-    issue_Missing_Large_When_Yes = !is_bare_land & !is_control & is_first_timeframe & (!is.na(resampling_30x30) & resampling_30x30 == 2 & large_trees_present == "yes") & has_large == FALSE,
-    issue_Unexpected_Large_When_No = !is_bare_land & !is_control & is_first_timeframe & (!is.na(resampling_30x30) & resampling_30x30 == 2 & large_trees_present == "no") & has_large == TRUE,
+    issue_Missing_Large_Under_2 = !is_bare_land & !is_control & (!is.na(resampling_30x30) & resampling_30x30 < 2) & has_large == FALSE,
+    issue_Missing_Large_When_Yes = !is_bare_land & !is_control & (!is.na(resampling_30x30) & resampling_30x30 == 2 & large_trees_present == "yes") & has_large == FALSE,
+    issue_Unexpected_Large_When_No = !is_bare_land & !is_control & (!is.na(resampling_30x30) & resampling_30x30 == 2 & large_trees_present == "no") & has_large == TRUE,
     
-    issue_Little_Present_NA = !is_bare_land & !is_control & is_first_timeframe & (is.na(resampling_3x3) | resampling_3x3 < 2) & !is.na(little_trees_present),
+    issue_Little_Present_NA = !is_bare_land & !is_control & is_first_timeframe & (!is.na(resampling_3x3) & resampling_3x3 < 2) & !is.na(little_trees_present),
     issue_Little_Present_Missing = !is_bare_land & !is_control & is_first_timeframe & (!is.na(resampling_3x3) & resampling_3x3 == 2) & !(little_trees_present %in% c("yes", "no")),
     issue_Little_Trees_When_NA = !is_bare_land & !is_control & is_first_timeframe & is.na(resampling_3x3) & has_little_in_3x3 == TRUE,
-    issue_Missing_Little_Under_2 = !is_bare_land & !is_control & is_first_timeframe & (!is.na(resampling_3x3) & resampling_3x3 < 2) & has_little_in_3x3 == FALSE,
-    issue_Missing_Little_When_Yes = !is_bare_land & !is_control & is_first_timeframe & (!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "yes") & has_little_in_3x3 == FALSE,
-    issue_Unexpected_Little_When_No = !is_bare_land & !is_control & is_first_timeframe & (!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "no") & has_little_in_3x3 == TRUE,
+    issue_Missing_Little_Under_2 = !is_bare_land & !is_control & (!is.na(resampling_3x3) & resampling_3x3 < 2) & has_little_in_3x3 == FALSE,
+    issue_Missing_Little_When_Yes = !is_bare_land & !is_control & (!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "yes") & has_little_in_3x3 == FALSE,
+    issue_Unexpected_Little_When_No = !is_bare_land & !is_control & (!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "no") & has_little_in_3x3 == TRUE,
     
     issue_Missing_Census = !is_bare_land & !is_control & (has_little_in_census == FALSE) & !((!is.na(resampling_3x3) & resampling_3x3 < 2) | (!is.na(resampling_3x3) & resampling_3x3 == 2 & little_trees_present == "yes")),
     
@@ -395,13 +395,13 @@ if (nrow(logic_failures) > 0) {
     rowwise() %>%
     mutate(
       issue_text = paste(c(
-        if(issue_Large_Present_NA && issue_Missing_Large_Under_2 && large_trees_present == "no") sprintf("resampling_30x30 is NA or <2, but NO LARGE TREES found (large_trees_present is 'no')") else if(issue_Large_Present_NA) sprintf("resampling_30x30 is NA or <2, but large_trees_present is '%s'", large_trees_present) else NULL,
+        if(issue_Large_Present_NA && issue_Missing_Large_Under_2 && large_trees_present == "no") sprintf("resampling_30x30 is <2, but NO LARGE TREES found (large_trees_present is 'no')") else if(issue_Large_Present_NA) sprintf("resampling_30x30 is <2, but large_trees_present is '%s'", large_trees_present) else NULL,
         if(issue_Large_Present_Missing) sprintf("resampling_30x30 is 2, but large_trees_present is '%s' (expected 'yes'/'no')", large_trees_present) else NULL,
         if(issue_Large_Trees_When_NA) "resampling_30x30 is NA, but large trees found" else NULL,
         if(issue_Missing_Large_Under_2 && issue_Missing_Large_When_Yes) "resampling_30x30 is <2 and large_trees_present is 'yes', but NO LARGE TREES found" else if(issue_Missing_Large_Under_2 && !(issue_Large_Present_NA && large_trees_present == "no")) "resampling_30x30 is <2, but NO LARGE TREES found" else if(issue_Missing_Large_When_Yes) "large_trees_present is 'yes', but NO LARGE TREES found" else NULL,
         if(issue_Unexpected_Large_When_No) "large_trees_present is 'no', but large trees WERE found" else NULL,
         
-        if(issue_Little_Present_NA && issue_Missing_Little_Under_2 && little_trees_present == "no") sprintf("resampling_3x3 is NA or <2, but NO LITTLE TREES found (little_trees_present is 'no')") else if(issue_Little_Present_NA) sprintf("resampling_3x3 is NA or <2, but little_trees_present is '%s'", little_trees_present) else NULL,
+        if(issue_Little_Present_NA && issue_Missing_Little_Under_2 && little_trees_present == "no") sprintf("resampling_3x3 is <2, but NO LITTLE TREES found (little_trees_present is 'no')") else if(issue_Little_Present_NA) sprintf("resampling_3x3 is <2, but little_trees_present is '%s'", little_trees_present) else NULL,
         if(issue_Little_Present_Missing) sprintf("resampling_3x3 is 2, but little_trees_present is '%s' (expected 'yes'/'no')", little_trees_present) else NULL,
         if(issue_Little_Trees_When_NA) "resampling_3x3 is NA, but little trees found" else NULL,
         if(issue_Missing_Little_Under_2 && issue_Missing_Little_When_Yes) "resampling_3x3 is <2 and little_trees_present is 'yes', but NO LITTLE TREES found" else if(issue_Missing_Little_Under_2 && !(issue_Little_Present_NA && little_trees_present == "no")) "resampling_3x3 is <2, but NO LITTLE TREES found" else if(issue_Missing_Little_When_Yes) "little_trees_present is 'yes', but NO LITTLE TREES found" else NULL,
