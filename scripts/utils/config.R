@@ -76,6 +76,8 @@ file_site_size_data <- "site_size_data.csv"
 file_kobo_forms     <- "2026 Active-NonActive Kobo Forms.xlsx"
 file_kobo_plot      <- "plot_data_2026_11_09.csv"
 file_kobo_tree      <- "tree_data_2026_11_09.csv"
+file_kobo_geo       <- "Geo_Data_2026_11_09.csv"
+file_kobo_photo     <- "Photo_Data_2026_11_09.csv"
 file_dq_issues      <- "data_quality_issues_2026_05_12.xlsx"
 file_cleaning_log   <- "database_cleaning_2026_11_09.xlsx"
 
