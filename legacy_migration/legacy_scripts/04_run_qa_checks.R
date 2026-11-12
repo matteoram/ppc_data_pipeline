@@ -173,7 +173,7 @@ if (nrow(duplicate_surveys) > 0) {
       by = c("plot_name", "timeframe")
     ) %>%
     mutate(
-      issue = sprintf("• Duplicate form submission detected! Plot '%s' was surveyed multiple times during '%s'.", plot_name, timeframe),
+      issue = sprintf("• Duplicate form submission detected: plot '%s' was surveyed multiple times during '%s'.", plot_name, timeframe),
       uuid = duplicate_uuids,
       org_name = coalesce(org_name, target_org),
       correct_value = NA_character_,
@@ -261,11 +261,43 @@ bare_land_projects <- c("ACT", "CHI", "MAD", "UAE", "GFW", "GAU", "RCH", "TCA")
 qa_logic_base <- surveys_table_filled %>%
   mutate(stratum_clean = trimws(stratum)) %>%
   left_join(map_strata_filtered %>% select(stratum_name, stratum_category), by = c("stratum_clean" = "stratum_name")) %>%
-  left_join(plots_table_final %>% select(plot_name, plot_type) %>% distinct(), by = "plot_name") %>%
-  left_join(sites_table %>% select(site_id, bare_land) %>% distinct(site_id, .keep_all = TRUE), by = "site_id") %>%
+  left_join(
+    plots_table_final %>% 
+      select(plot_name, plot_type, any_of(c("plot_permanence", "site_size_restoration", "site_size_control"))) %>% 
+      distinct(plot_name, .keep_all = TRUE), 
+    by = "plot_name"
+  ) %>%
+  left_join(
+    sites_table %>% 
+      select(site_id, bare_land, any_of(c("site_size_restoration", "site_size_control"))) %>% 
+      rename_with(~ paste0(.x, "_site"), any_of(c("site_size_restoration", "site_size_control"))) %>% 
+      distinct(site_id, .keep_all = TRUE), 
+    by = "site_id"
+  ) %>%
   mutate(
     stratum_category = replace_na(stratum_category, "unmapped"),
     plot_type = tolower(trimws(plot_type)),
+    plot_permanence = if ("plot_permanence" %in% names(.)) {
+      if_else(is.na(plot_permanence) | trimws(as.character(plot_permanence)) %in% c("", "NA"), NA_character_, as.character(plot_permanence))
+    } else NA_character_,
+    site_size_restoration = {
+      val_plot <- if ("site_size_restoration" %in% names(.)) {
+        if_else(is.na(site_size_restoration) | trimws(as.character(site_size_restoration)) %in% c("", "NA"), NA_character_, as.character(site_size_restoration))
+      } else NA_character_
+      val_site <- if ("site_size_restoration_site" %in% names(.)) {
+        if_else(is.na(site_size_restoration_site) | trimws(as.character(site_size_restoration_site)) %in% c("", "NA"), NA_character_, as.character(site_size_restoration_site))
+      } else NA_character_
+      coalesce(val_plot, val_site)
+    },
+    site_size_control = {
+      val_plot <- if ("site_size_control" %in% names(.)) {
+        if_else(is.na(site_size_control) | trimws(as.character(site_size_control)) %in% c("", "NA"), NA_character_, as.character(site_size_control))
+      } else NA_character_
+      val_site <- if ("site_size_control_site" %in% names(.)) {
+        if_else(is.na(site_size_control_site) | trimws(as.character(site_size_control_site)) %in% c("", "NA"), NA_character_, as.character(site_size_control_site))
+      } else NA_character_
+      coalesce(val_plot, val_site)
+    },
     is_control = !is.na(plot_type) & plot_type == "control",
     is_bare_land = (tolower(replace_na(bare_land, "no")) == "yes") | 
                    (exists("target_org_code") && target_org_code %in% bare_land_projects)
@@ -377,7 +409,25 @@ logic_failures <- qa_logic_base %>%
     # Unmapped Stratum
     issue_Unmapped_Stratum     = !is.na(stratum) & stratum_category == "unmapped",
     
-    issue_y0_Missing_Resampling = !is_bare_land & !is_control & is_first_timeframe & (is.na(resampling_30x30_orig) | is.na(resampling_3x3_orig))
+    issue_y0_Missing_Resampling = !is_bare_land & !is_control & is_first_timeframe & (is.na(resampling_30x30_orig) | is.na(resampling_3x3_orig)),
+    
+    # 1) Missing plot permanence
+    issue_Missing_Permanence = is.na(plot_permanence) | trimws(as.character(plot_permanence)) == "" | tolower(trimws(as.character(plot_permanence))) == "na",
+    
+    # 2) Restoration plot with site_size_restoration == "yes" but missing both resampling_30x30 and large_trees_present
+    issue_Restoration_Large_Trees_Missing = (!is.na(site_size_restoration) & tolower(trimws(site_size_restoration)) == "yes") &
+      (!is.na(plot_type) & plot_type == "restoration") &
+      (is.na(resampling_30x30) | trimws(as.character(resampling_30x30)) == "") &
+      (is.na(large_trees_present) | trimws(as.character(large_trees_present)) == ""),
+    
+    # 3) Control plot with site_size_control == "no" but missing large_trees_present
+    issue_Control_Large_Trees_Missing = (!is.na(site_size_control) & tolower(trimws(site_size_control)) == "no") &
+      (!is.na(plot_type) & plot_type == "control") &
+      (is.na(large_trees_present) | trimws(as.character(large_trees_present)) == ""),
+    
+    # 4) Control plot missing little_trees_present
+    issue_Control_Little_Trees_Missing = (!is.na(plot_type) & plot_type == "control") &
+      (is.na(little_trees_present) | trimws(as.character(little_trees_present)) == "")
   ) %>%
   mutate(across(starts_with("issue_"), ~replace_na(., FALSE))) %>%
   filter(
@@ -387,7 +437,9 @@ logic_failures <- qa_logic_base %>%
     issue_Missing_Little_Under_2 | issue_Missing_Little_When_Yes | issue_Unexpected_Little_When_No |
     issue_Missing_Census | issue_Invalid_Census | 
     issue_Pattern_Format_Invalid | issue_Intervention_Mismatch | issue_Unmapped_Stratum |
-    issue_y0_Missing_Resampling | issue_Planting_Pattern_Consistency
+    issue_y0_Missing_Resampling | issue_Planting_Pattern_Consistency |
+    issue_Missing_Permanence | issue_Restoration_Large_Trees_Missing |
+    issue_Control_Large_Trees_Missing | issue_Control_Little_Trees_Missing
   )
 
 if (nrow(logic_failures) > 0) {
@@ -447,7 +499,11 @@ if (nrow(logic_failures) > 0) {
         if(issue_Tree_Count_Mismatch) sprintf("With planting pattern '%s' a total of %s planted trees should be observed, but only %s are actually entered", planting_pattern, round(expected_trees), total_planted_in_group) else NULL,
         
         if(issue_Unmapped_Stratum) sprintf("Stratum '%s' does not seem a valid stratum", stratum) else NULL,
-        if(issue_y0_Missing_Resampling) sprintf("Timeframe is '%s', but resampling_30x30 is '%s' and resampling_3x3 is '%s'", timeframe, resampling_30x30_orig, resampling_3x3_orig) else NULL
+        if(issue_y0_Missing_Resampling) sprintf("Timeframe is '%s', but resampling_30x30 is '%s' and resampling_3x3 is '%s'", timeframe, resampling_30x30_orig, resampling_3x3_orig) else NULL,
+        if(issue_Missing_Permanence) "No information provided on plot_permanence" else NULL,
+        if(issue_Restoration_Large_Trees_Missing) "site_size_restoration is 'yes' and plot_type is 'restoration', but both resampling_30x30 and large_trees_present are missing" else NULL,
+        if(issue_Control_Large_Trees_Missing) "site_size_control is 'no' and plot_type is 'control', but large_trees_present is missing" else NULL,
+        if(issue_Control_Little_Trees_Missing) "plot_type is 'control', but little_trees_present is missing" else NULL
       ), collapse = "\n• ")
     ) %>%
   mutate(across(starts_with("issue_"), ~replace_na(., FALSE))) %>%

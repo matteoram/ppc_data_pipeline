@@ -286,16 +286,6 @@ clean_resample_info <- function(df) {
       tolower(plot_type) == "control" ~ NA_character_,
       is_bare_land_plot ~ NA_character_,
       TRUE ~ resampling_3x3
-    ),
-    large_trees_present = case_when(
-      tolower(plot_type) == "control" ~ NA_character_,
-      is_bare_land_plot ~ NA_character_,
-      TRUE ~ large_trees_present
-    ),
-    little_trees_present = case_when(
-      tolower(plot_type) == "control" ~ NA_character_,
-      is_bare_land_plot ~ NA_character_,
-      TRUE ~ little_trees_present  
     )
   )
 
